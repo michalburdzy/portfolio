@@ -1,2 +1,2 @@
-# portfolio
-Michał Burdzy Developer Portfolio
+# personal_portfolio
+Here is my README!

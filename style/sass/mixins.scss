@@ -1,0 +1,11 @@
+@mixin respond($size){
+    @if $size == tab-land {
+        @media only screen and (max-width: 75em) // 1200px
+            {@content};
+    }
+    @if $size == tab-port {
+        @media only screen and (max-width: 56em)  // 900px
+            {@content};
+    }
+}
+

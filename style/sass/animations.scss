@@ -1,0 +1,34 @@
+@keyframes heartBit {
+    0 {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+    30% {
+        opacity: 0;
+        transform: scale(1.5);
+
+    }
+    30.00001% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    60% {
+        opacity: 0;
+        transform: scale(1.5);
+
+    }
+    61% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes appear{
+    from{
+        transform: scale(.000001);
+    }
+    to {
+        transform: scale(1);
+    }
+}
