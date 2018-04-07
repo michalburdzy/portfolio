@@ -4,7 +4,7 @@
   "description": "personal portfolio of michal burdzy",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass style/sass/main.scss style/css/style.css -w",
+    "compile:sass": "node-sass style/sass/main.scss style.css -w",
     "live-server": "live-server",
     "devserver": "npm-run-all -p compile:sass live-server"
   },

@@ -16,8 +16,7 @@
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 2rem;
   justify-items: start;
-  align-items: start;
-  display: none; }
+  align-items: start; }
 
 .projects {
   grid-column: 2 / span 9;
