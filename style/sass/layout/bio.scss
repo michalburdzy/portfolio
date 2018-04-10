@@ -1,0 +1,6 @@
+.bio {
+    grid-column: 1 / -1;
+    height: 60rem;
+    background-color:rgb(230, 255, 192);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}

@@ -1,4 +1,5 @@
 .projects {
+  margin-bottom: 6rem;
     grid-column: 2 / span 9;
     // padding: 20px;
     // height: 95vh;
@@ -6,7 +7,8 @@
     max-width: 90%;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-auto-rows: minmax(50px, 1fr);
+    grid-template-rows: 20rem;
+    grid-auto-rows: minmax(1vw, 3vw);
     grid-gap: 15px;
     // background-color: #ccc;
     transition: all .3s;
@@ -15,7 +17,12 @@
     &__header {
         grid-row: 1 / span 1;
         grid-column: 1 / span 9;
-    }
+        align-self: center;
+        justify-self: center;
+        font-size: 5rem;
+        text-align: center;
+        // margin: 6rem auto;
+      }
     
     // DO PRZETESTOWANIA!!!
     // &:hover {
@@ -36,9 +43,13 @@
         overflow: hidden;
         grid-row: span 4;
         grid-column: span 2;
-        background-size: contain;
+        background-size: cover;
+        background-position: center;
         cursor: pointer;
         animation: appear .5s backwards;
+        animation-play-state: paused;
+        // animation-fill-mode: backwards;
+        // animation-duration: .5s;
         
         &::after{
           position: absolute;
@@ -166,8 +177,10 @@
         &--8{
           grid-column: 8 / span 2;
           grid-row: 7 / span 5;
-          background-image: url('http://res.cloudinary.com/dpyegjkuf/image/upload/c_scale,w_315/v1523056525/Notepad_ly9zmr.jpg');
+          background-image: url('http://res.cloudinary.com/dpyegjkuf/image/upload/ar_0.35,c_scale,w_375/v1523187904/Notepad_btlept.jpg');
           animation-delay: .8s;
+          // background-size: contain;
+          background-repeat: no-repeat;
         }
         &--9 {
           grid-column: 1 / span 2;
@@ -186,6 +199,11 @@
           grid-row: 12 / span 4;
           background-image: url('http://res.cloudinary.com/dpyegjkuf/image/upload/c_scale,w_681/v1523056073/SimonGame_g5lyi7.jpg');
           animation-delay: 1.1s;
+        }
+        &--12 {
+          grid-column: 1 / span -1;
+          grid-row: 17 / span 3;
+          background-image: radial-gradient(rgb(230, 255, 192), #ddd);
         }
         
         &:hover {

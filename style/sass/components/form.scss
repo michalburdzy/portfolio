@@ -1,0 +1,100 @@
+
+.form {
+
+    margin-bottom: 4rem;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    display: grid;
+    grid-template-areas: "text text"
+                        "name email"
+                        "submit submit" ;
+    transition: all .5s;
+    animation: appear .5s backwards;
+    animation-play-state: paused;
+    box-shadow: .5rem .5rem .5rem rgba(0, 0, 0, .5);
+
+    &__group {
+
+        &--message {
+            grid-area: text;
+            color: #555;
+            font-weight: 500;
+            font-size: 2.7rem;
+        }
+        &--name {
+            grid-area: name;
+        }
+        &--email {
+            grid-area: email;
+        }
+
+    }
+
+    &__input{
+        user-select: all;
+        display: block;
+        width: 100%;
+        font-size: 2.5rem;
+        padding: 1rem;
+        font-family:   'Lato', 'PT Sans Caption', sans-serif;
+        border: none;
+        border-top: 2px solid #ddd;   
+      
+        
+        &--name,
+        &--email {
+            
+            border-bottom: 2px solid #ddd;
+            &:focus {
+                border-bottom: 2px solid rgb(0, 255, 0);
+            }
+            &:focus:invalid {
+                border-bottom: 2px solid rgb(255, 81, 0);
+            }
+        }
+        
+
+
+
+        &--label {
+            display: block;
+            font-size: 2.5rem;
+            padding: 1rem;
+            margin-left: .1rem;
+            font-family:   'Lato', 'PT Sans Caption', sans-serif;
+            transition: all .15s;
+
+            
+        }
+        
+        &--name{
+            border-right: 1px solid #eee;
+
+        }
+        &--email {
+            border-left: 1px solid #eee;
+
+        }
+        &--message {
+            resize: none;
+            // border-bottom: 1px solid #ccc;
+        }
+        &--submit{
+            grid-area: submit;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: skyblue;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            
+        }
+
+        &:placeholder-shown + &--label {
+            transform: translateY(-5rem);
+            user-select: all;
+            visibility: hidden;
+
+        }
+    }
+}

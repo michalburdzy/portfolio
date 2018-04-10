@@ -1,26 +1,68 @@
+.animation-appear {
+    animation-play-state: running !important;
+}    
+
+
+@keyframes typing {
+    from { width: 1% }
+    to { width: 100% }
+  }
+
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #eee; }
+}
+
+@keyframes moveInButton {
+    from {
+        transform: translateY(5rem);
+        // border-bottom: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translateY(0);
+        // border-bottom: 1px solid #fff;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+
 @keyframes heartBit {
     0 {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1.1);
 
     }
     30% {
         opacity: 0;
-        transform: scale(1.5);
+        transform: scale(1.7);
 
     }
-    30.00001% {
+    31%{
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    32% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1.1);
     }
     60% {
         opacity: 0;
-        transform: scale(1.5);
+        transform: scale(1.7);
 
     }
     61% {
         opacity: 0;
-        transform: scale(1);
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+
     }
 }
 
