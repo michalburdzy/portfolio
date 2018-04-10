@@ -1,3 +1,7 @@
+$( document ).ready(function(){
+
+console.log('js ok!')
+
 var allProjects = $('.projects__gallery');
 var projectsSection = $('.projects');
 var contactForm = $('.form');
@@ -18,4 +22,6 @@ $(window).on('scroll', function() {
         console.log('contact!')
     }
 });
+
+})
 
