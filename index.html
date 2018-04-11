@@ -7,8 +7,14 @@
     <meta name="author" content="Michał Burdzy">
     <meta name="description" content="Personal Portfolio Site, Michał Burdzy web developer">
     <meta name="keywords" content="portfolio, web development, front-end, web design">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,400,700,900|PT+Sans+Caption:400,700|PT+Sans:400,700" type="text/css">
-    <link rel="stylesheet" href="/style/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|PT+Sans+Caption:400,700|PT+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script> -->
+    <!-- <script src="https://cdn.rawgit.com/mmicalt/portfolio/bb41fa33/js/app.js" ></script>
+    <script src="https://rawgit.com/mmicalt/portfolio/master/js/app.js" ></script> -->
+    <script src="./js/app.js" ></script>
+
+    
   </head>
   <body>
     
@@ -16,75 +22,144 @@
     <header class="header">
         <div class="screen">
           <div class="screen__text">Hi, I'm Michal</div>
-          <div class="screen__text--small">- web developer</div>
+          <div class="screen__text--small">@web developer</div>
         </div>
-        <div class="header__button">more about me</div>
+        <a class="header__button" href="#bio">about me</a> 
 
         
         <div class="navbar__logo">
-            <div class="navbar__logo-text">MB</div>
-        </div>
+          <div class="navbar__logo-text">MB</div>
+      </div>
         <ul class="navbar">
-            <li class="navbar__item navbar__item--1">About Me</li>
-            <li class="navbar__item navbar__item--2">My Projects</li>
-            <li class="navbar__item navbar__item--3">What I do now</li>
-            <li class="navbar__item navbar__item--4">Contact Me</li>
+            <li class="navbar__item navbar__item--1"><a href="#bio" class="navbar__item--link">About Me</a></li>
+            <li class="navbar__item navbar__item--2"><a href="#projects" class="navbar__item--link"> My Projects </a></li>
+            <li class="navbar__item navbar__item--3"><a href="#" class="navbar__item--link">What I do now</a></li>
+            <li class="navbar__item navbar__item--4"><a href="#contact" class="navbar__item--link">Contact Me</a></li>
         </ul>
+        
 
     </header>
+    
+    
 
-    <div class="projects">
-      <h2 class="projects__header">My Projects</h2>
+    <section id="bio" class="bio">
+        <!-- <h3 class="bio__header">about me</h3> -->
+      <div class="bio__container">
+          
+          <div class="bio__about--header bio--item">about me</div>
+          <div class="bio__about bio--item">JavaScript Web Developer, passionate about beautiful, modern web design. Privately musican, enthusiast of astronomy, inline skating and SF literature. Fan of Italian language and culture, votary of self-development, coffee addict. </div>
+          <div class="bio__photo">
+            
+            <img src="./img/Michal.jpg" alt="Photo of Michal Burdzy" class="bio__photo bio--item">
+            <img src="./img/glasses.png" alt="glasses" class="bio__photo--glasses">
+          </div>
+          <a href="#contact" class="bio__button bio--item" >contact me</a>
+          <div class="bio__technologies--header bio--item">my tools</div>
+          <div class="bio__technologies bio--item">
+            <a href="#contact" class="bio__technologies-logo bio__technologies-logo--1 "></a>
+            <a href="#" class="bio__technologies-logo bio__technologies-logo--2"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--3"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--4"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--5"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--6"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--7"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--8"></a>
+            <a href="#"  class="bio__technologies-logo bio__technologies-logo--9"></a>
+          </div>
+      </div>
+      
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="projects__header">See my best projects</h2>
       <a href="https://mmicalt.github.io/BorrowMe/" target="_blank" class="projects__gallery projects__gallery--1">
+        <div class="projects__gallery-background projects__gallery--1-background"></div>
         <div class="projects__gallery--header ">Borrow Me!</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aliquid debitis totam, consequuntur sed rem molestias odit ea sapiente? Saepe repellat obcaecati explicabo quibusdam quo odit reprehenderit dolorum eligendi fugiat?</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/MEPyRy/" target="_blank"  class="projects__gallery projects__gallery--2">
+        <div class="projects__gallery-background projects__gallery--2-background"></div>
         <div class="projects__gallery--header ">Random Quote Machine </div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique ratione quaerat earum voluptatibus?</div> </a>
       <a href="https://codepen.io/mmicalt/full/aLrBYG/" target="_blank"  class="projects__gallery projects__gallery--3">
+        <div class="projects__gallery-background projects__gallery--3-background"></div>
         <div class="projects__gallery--header ">Weather Machine</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique ratione quaerat earum voluptatibus?</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/ZazEGL/" target="_blank"  class="projects__gallery projects__gallery--4">
+        <div class="projects__gallery-background projects__gallery--4-background"></div>
         <div class="projects__gallery--header ">Wikipedia Viewer</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique ratione quaerat earum voluptatibus?</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/WdjMyq/" target="_blank"  class="projects__gallery projects__gallery--5">
-        <div class="projects__gallery--header ">JS Calculator</div>
-        <div class="projects__gallery--footer ">Fully funcional calculator in JavaScript</div>
+        <div class="projects__gallery-background projects__gallery--5-background"></div>
+        <div class="projects__gallery--header ">Calculator</div>
+        <div class="projects__gallery--footer ">JavaScript calculator</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/LQVXNw/" target="_blank"  class="projects__gallery projects__gallery--6">
+        <div class="projects__gallery-background projects__gallery--6-background"></div>
         <div class="projects__gallery--header ">Pomodoro Clock</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique ratione quaerat earum voluptatibus?</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/OOmXBd/" target="_blank"  class="projects__gallery projects__gallery--7">
+        <div class="projects__gallery-background projects__gallery--7-background"></div>
         <div class="projects__gallery--header ">Twitch Streamers</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique ratione quaerat earum voluptatibus?</div>
       </a>
       <a href="https://codepen.io/mmicalt/full/mBYaew/" target="_blank"  class="projects__gallery projects__gallery--8">
+        <div class="projects__gallery-background projects__gallery--8-background"></div>
         <div class="projects__gallery--header ">To-Do List</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim, eius repellat perferendis similique</div>
       </a>
       <div class="projects__gallery projects__gallery--9">
+          <div class="projects__gallery-background projects__gallery--9-background"></div>
         <div class="projects__gallery--header ">Tic Tac Toe</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim</div>
       </div>
       <a href="#" target="_blank"  class="projects__gallery projects__gallery--10">
+          <div class="projects__gallery-background projects__gallery--10-background"></div>
         <div class="projects__gallery--header ">Portfolio</div>
         <div class="projects__gallery--footer ">Just a joke :) </div>
       </a>
       <a href="https://codepen.io/mmicalt/full/VQQEqm/" target="_blank"  class="projects__gallery projects__gallery--11">
+        <div class="projects__gallery-background projects__gallery--11-background"></div>
         <div class="projects__gallery--header ">Simon Game</div>
         <div class="projects__gallery--footer ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex doloremque iusto enim</div>
       </a>
-    </div>
+      <a href="#" target="_blank"  class="projects__gallery projects__gallery--12">
+          <div class="projects__gallery-background projects__gallery--12-background"></div>
+        <div class="projects__gallery--header ">React / mySQL / MongoDB apps</div>
+        <div class="projects__gallery--footer ">Coming soon!</div>
+      </a>
+    </section>
 
-
-    <main class="main">main content</main>
-    <footer class="footer">footer</footer>
+    <section class="contact" id="contact">
+      <h2 class="contact__header">Contact Me!</h2>
+      <div class="contact__form form__container">
+        <form class="form" action="https://formspree.io/mmicalt@gmail.com"
+            method="POST">
+            <div class="form__group form__group--message">
+              <label for="message" class="form__input--label">Your message</label>
+              <textarea class="form__input form__input--message" name="message" id="message" cols="40" rows="4"></textarea>
+            </div>
+            <div class="form__group  form__group--name">
+              <input id="name" class="form__input form__input--name" type="text" name="name" placeholder="name">
+              <label for="name" class="form__input--label">name</label>
+            </div>
+            <div class="form__group form__group--email">
+              <input id="email" class="form__input form__input--email" type="email" name="email" placeholder="email">
+              <label for="email" class="form__input--label">email</label>
+            </div>
+            <input class="form__input form__input--submit" type="submit" value="Send message">
+        </form>
+      </div>
+      
+    </section>
+    <footer class="footer">
+      <h4 class="footer__text">Built with love by <a class="footer__text--link" href="https://www.linkedin.com/in/michal-burdzy-614646145/">Michal Burdzy</a></h4>
+    </footer>
   
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script> -->
   <script src="/js/app.js" type="text/javascript"></script>
   </body>
 </html>

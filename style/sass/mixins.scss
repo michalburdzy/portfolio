@@ -9,3 +9,13 @@
     }
 }
 
+@mixin bugFix {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    -webkit-transform: translateZ(0) scale(1.0, 1.0) translate3d(0,0,0);
+    transform: translateZ(0) scale(1.0, 1.0) translate3d(0,0,0);
+    
+    -webkit-font-smoothing: subpixel-antialiased;
+    
+}

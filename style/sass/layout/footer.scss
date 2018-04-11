@@ -3,5 +3,28 @@
 .footer {
     grid-column: 1/ -1;
     background-color: indianred;
+    height: 10rem;
+    background-color: rgb(153, 185, 133);
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+
+    &__text {
+
+        &--link {
+            text-decoration: none;
+            transition: all .2s;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        font-weight: 400;
+        margin: 0 auto;
+    }
+
 }
 
