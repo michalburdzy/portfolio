@@ -2,10 +2,11 @@
     grid-column: 1/ -1;
     // background-color: #ddd;
     height: 48vw;
-
-
-
-    
+    background-image: linear-gradient(transparent 58%, rgba(0,0,0,.2) 69%, rgba(2, 0, 121, 0.6) 100%, ),  url(../../img/background_computer.jpg);
+    // background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),  url(../../img/background_computer.jpg);
+    background-size: 120%;
+    background-position: center top;
+    background-repeat: no-repeat;
     position: relative;
     z-index: 10;
 
@@ -16,25 +17,7 @@
     justify-items: start;
     align-items: start;
 
-    // background-image: linear-gradient( transparent 95%,  rgb(230, 255, 192) 100%);
-
-
-    //     content: '';
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     z-index: -1;
-        background-image: linear-gradient( to bottom, transparent 0%, transparent  93%, rgb(230, 255, 192) 99%),  url(./img/background_computer.jpg);
-    // -webkit-filter: sepia(50%); /* Safari 6.0 - 9.0 */
-    // filter: sepia(50%);
-    // background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),  url(./img/background_computer.jpg);
-    background-size: 120%;
-    background-position: center top;
-    background-repeat: no-repeat;
-    // }
-
+    display: none;
 }
 
 

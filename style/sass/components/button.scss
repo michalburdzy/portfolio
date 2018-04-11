@@ -1,37 +1,25 @@
 
 .header__button {
-    &:link,
-    &:visited {
-        grid-row: 5 / span 1;
-        grid-column: 4 / span 4;
-        align-self: end;
-        justify-self: center;
-        font-size: 2.5rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        color: #eee;
-        padding: .6rem 1.5rem;
-        border: 2px solid #eee;
-        border-radius: 50px;
-        transform-origin: center;
-        transition: transform .2s;
-        animation: moveInButton .6s backwards;
-        animation-delay: 3.5s;
-        text-decoration: none;
-        box-shadow: .1rem .1rem .5rem rgba(0,0,0, .5);
+    // position: absolute;
+    // top: 40vw;
+    // left: 42%;
+    // min-height: 30px;
+    // min-width: 180px;
+    // background-color: orangered;
+    grid-row: 7 / span 1;
+    grid-column: 4 / span 4;
+    align-self: center;
+    justify-self: center;
+    font-size: 3rem;
+    color: #eee;
+    border-bottom: 2px solid #ddd;
+    transform-origin: center;
+    transition: all .2s;
 
 
-        &:hover {
-            color: #fff;
-            border-color: #fff;
-            transform: translateY(-5px);
-            background-color: #444;
-            box-shadow: .3rem .3rem 1rem rgba(0,0,0, .5);
-            cursor: pointer;
-        }
-        &:active {
-            transform: scale(1) translateY(-2px);
-        }
+    &:hover {
+        color: #fff;
+        border-bottom-color: #fff;
+        transform: scale(1.1);
     }
-    
 }

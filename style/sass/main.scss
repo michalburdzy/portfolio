@@ -1,12 +1,10 @@
 @import "mixins";
-@import "layout/bio.scss";
-@import "layout/contact.scss";
 @import "layout/footer.scss";
 @import "layout/header.scss";
+@import "layout/mainContent.scss";
 @import "layout/projects.scss";
 @import "animations";
 @import "components/button.scss";
-@import "components/form.scss";
 @import "components/navbar.scss";
 @import "components/screen.scss";
 
@@ -16,12 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transform: translateZ(0);
-
-
+    user-select: none;
 }
 
 html {
@@ -37,14 +30,7 @@ html {
 }
 
 body {
-    font-family:   'Lato', 'PT Sans Caption', sans-serif;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Firefox */
-       -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none;
-        box-sizing: border-box;
 }
 

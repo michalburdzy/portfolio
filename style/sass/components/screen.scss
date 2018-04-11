@@ -1,46 +1,52 @@
 .screen {
     background-color: transparent;
     // background-color: brown;
-    color: #fff;
+    color: #eee;
     overflow: hidden;
+    font-size: 4.5rem;
+    font-weight: 400;
     grid-row: 2 / span 3;
     grid-column: 4 / span 4;
     justify-self: center;
     align-self: center;
     margin-top: 5rem;
-    text-shadow: .1rem .1rem .1rem rgba(0,0,0, .3);
-
 
 
     &__text {
-        font-size: 4.5rem;
-        font-weight: 400;
-        overflow: hidden; 
-        border-right: .15em solid #eee; 
-        white-space: nowrap; 
-        // margin: 0 auto;
-        letter-spacing: .1em; 
-        animation: 
-        typing 1s 1s backwards steps(15, end),
-        blink-caret .55s step-start 5 forwards;
 
-    
+    overflow: hidden; 
+    border-right: .15em solid #eee; 
+    white-space: nowrap; 
+    // margin: 0 auto;
+    letter-spacing: .15em; 
+    animation: 
+    typing 2s 1s backwards steps(15, end),
+    blink-caret .75s step-start 5 forwards;
+
+    @keyframes typing {
+        from { width: 1% }
+        to { width: 100% }
+      }
+
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #eee; }
+    }
       
 
         &--small {
-            letter-spacing: .1em; 
-            font-size: 3.5rem;
-
             margin-top: 4rem;
             display: block;
             overflow: hidden; 
             border-right: .15em solid transparent; 
             white-space: nowrap; 
             // margin: 0 auto;
+            letter-spacing: .15em; 
             animation: 
-                typing 1s 1s backwards steps(15, end),
+                typing 2s 1s backwards steps(15, end),
                 blink-caret .75s step-end infinite backwards;
-            animation-delay: 2.5s;
+            animation-delay: 3.5s;
 
         }
     }

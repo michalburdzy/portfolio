@@ -1,4 +1,3 @@
-
 .navbar {
     grid-row: 1 / span 5;
     grid-column: 1 / span 2;
@@ -6,20 +5,18 @@
     background-color: rgba(0,0,0,.3);
     margin-top: -2rem;
     margin-left: 2rem;
-    // opacity: 0;
+    opacity: 0;
     display: grid;
     grid-row-gap: 4rem;
     padding-top: 15rem;
     padding-bottom: 3rem;
     justify-self: start;
-    
-    transition: all .7s .1s cubic-bezier(.31,-0.27,.46,1);
-    transform-origin: top left;
-    transform: translateY(-101%) scaleY(.5);
-   
+
     @include respond(tab-land){
             grid-column: 1 / span 3;
         }
+
+
 
 //////// COLUMN /////////////////////////
     // grid-auto-flow: column;
@@ -30,24 +27,28 @@
     // margin-left: 0;
 //////////////////////////
 
+    transition: all .7s .1s cubic-bezier(.31,-0.27,.46,1);
+    transform-origin: top left;
+    transform: translateY(-101%) scaleY(.5);
+
+
+    
+
     &__logo {
-        // opacity:.;
+        opacity:.9;
         height: 6rem;
         width: 6rem;
         grid-row: 1 / 2;
         grid-column: 1 / 2;
         justify-self: center;
         align-self: start;
-        background-color: transparent;
-        border: 2px solid #fff;
+        background-color: rgb(221, 192, 192);
         border-radius: 100%;
         margin: 2rem;
         z-index: 10;
         // cursor: pointer;
         position: relative;
         transition: all .2s;
-        cursor: pointer;
-
 
         &-text {
             line-height: 6rem;
@@ -63,38 +64,34 @@
             content: '';
             height: 100%;
             width: 100%;
-            border: 2px solid #fff;
             border-radius: 100%;
             position: absolute;
             top:0%;
             left: 0%;
             z-index: -1;
-            transform: scale(1.2);
 
                 animation: 3s heartBit infinite;
                 transition: all .4s;
                 background-color: inherit;
-                animation-play-state: running;
-
            
         }
-        
+
         &:hover {
             opacity: 1;
-            transform: scale(1.2);            
+            transform: scale(1.3);
+            animation: none;
+            
         }
-
     }
 
     &__logo:hover ~ &,
     &:hover {
         transform: translateY(0) scaleY(1);
         opacity: 1;
-        // color: #eee;
+        color: #eee;
     }
 
     &__item {
-        // height: 6rem;
         transition: opacity 1s .2s;
         list-style: none;
         padding: 1.5rem 1.5rem;
@@ -103,44 +100,31 @@
         background-color: transparent;
         border-radius: 1px;
         cursor: pointer;
-        background-image: linear-gradient(120deg, #ddd 0, #ddd 50%, transparent  50%);
+
+
+        background-image: linear-gradient(120deg, #eee 0, #eee 50%, transparent  50%);
         background-size: 270%;
         background-position: 100%;
         transition: all .5s, transform .1s;
-        letter-spacing: 1px;
-     
-
-        &--link {
-            text-decoration: none;
-            color: #fff;
-            transition: all .5s;
-        }
 
         &:hover {
-            
+            color: rgb(21, 0, 59);
             border-radius: 5px;
             // background-size: 100%;
             background-position: 10%;
             transform: scale(1.05);
             // box-shadow: 2rem 2rem 3rem rgba(0,0,0,1));
-            // letter-spacing: .8px;
 
 
-            
-
-        }
-        &:hover > &--link {
-            color: rgb(0, 0, 0);
-            // color: rgb(160, 160, 160);
         }
     }
-
-
 
     &__logo:hover ~ & > &__item,
     &:hover > &__item{
         opacity: 1;
         visibility: visible;
+
+
     }
     
 
