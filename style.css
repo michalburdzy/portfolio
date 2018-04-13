@@ -16,9 +16,8 @@
   .bio__container {
     display: grid;
     grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me       photo         biobutton-1" "me      me         photo      biobutton-2";
-    grid-template-rows: repeat(5, max-content);
     grid-template-columns: 1fr 1fr minmax(min-content, 0.6fr) 1fr;
-    grid-gap: .4rem;
+    grid-gap: .8rem;
     background-color: #ececf3;
     background-color: #fff;
     opacity: .9;
@@ -32,7 +31,7 @@
     @media only screen and (max-width: 39.375em) {
       .bio__container {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header    header    header     header" "me-head  me-head me-head       me-head" "me       me       me           me" "photo    techno   techno techno" "biobutton-1     techno   techno techno" "biobutton-2 tec-head tec-head tec-head"; } }
+        grid-template-areas: "header    header    header" "me-head  me-head me-head " "me       me       me    " "photo      tec-head tec-head" "photo    techno techno" "biobutton-2 biobutton-2 biobutton-1"; } }
   .bio--item {
     border-radius: 8px;
     color: white;
@@ -113,12 +112,13 @@
   .bio__button--2 {
     grid-area: biobutton-2; }
   .bio__button:link, .bio__button:visited {
-    max-height: 5rem;
+    align-self: center;
+    vertical-align: end;
     width: 100%;
     background-color: #87ceeb;
     border-radius: 8px;
     font-size: 2.8rem;
-    line-height: 4rem;
+    line-height: 5rem;
     cursor: pointer;
     transition: all .1s;
     text-decoration: none; }
@@ -137,7 +137,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    justify-content: space-evenly; }
+    justify-content: space-between; }
     .bio__technologies--header {
       grid-area: tec-head;
       font-size: 3.8rem;
@@ -165,8 +165,8 @@
       margin: .3rem; }
       @media only screen and (max-width: 39.375em) {
         .bio__technologies-logo {
-          width: 10rem;
-          height: 10rem; } }
+          width: 8rem;
+          height: 8rem; } }
       @media only screen and (max-width: 32em) {
         .bio__technologies-logo {
           width: 8rem;

@@ -30,12 +30,12 @@
 
         
 
-        grid-template-rows: repeat(5, max-content);
+        // grid-template-rows: repeat(5, min-content);
         // grid-template-columns: repeat(4, minmax);
         grid-template-columns: 1fr 1fr minmax(min-content, .6fr) 1fr;
         // justify-items: center;
         // align-items: center;
-        grid-gap: .4rem;
+        grid-gap: .8rem;
 
         background-color: #ececf3;
         background-color: #fff;
@@ -53,12 +53,12 @@
         @include respond(phone-big){
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
-            "header    header    header     header"
-            "me-head  me-head me-head       me-head"
-            "me       me       me           me"
-            "photo    techno   techno techno"
-            "biobutton-1     techno   techno techno"
-            "biobutton-2 tec-head tec-head tec-head";
+            "header    header    header"
+            "me-head  me-head me-head "
+            "me       me       me    "
+            "photo      tec-head tec-head"
+              "photo    techno techno"
+            "biobutton-2 biobutton-2 biobutton-1";
 
             
         }
@@ -190,13 +190,14 @@
 
         &:link,
         &:visited {
-            
-            max-height: 5rem;
+            align-self: center;
+            vertical-align: end;
+            // max-height: 5rem;
             width: 100%;
             background-color: #87ceeb;
             border-radius: 8px;
             font-size: 2.8rem;
-            line-height: 4rem;
+            line-height: 5rem;
             cursor: pointer;
             transition: all .1s;
             text-decoration: none;
@@ -232,7 +233,7 @@
         display: flex;
         flex-wrap: wrap;
         align-content: start;
-        justify-content: space-evenly;
+        justify-content: space-between;
 
         
 
@@ -270,8 +271,8 @@
             margin: .3rem;
 
             @include respond(phone-big){
-                width: 10rem;
-                height: 10rem;
+                width: 8rem;
+                height: 8rem;
             }
             @include respond(phone-small){
                 width: 8rem;
