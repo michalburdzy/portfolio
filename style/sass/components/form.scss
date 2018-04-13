@@ -44,7 +44,21 @@
         padding: 1rem;
         font-family:   'Lato', 'PT Sans Caption', sans-serif;
         border: none;
-        border-top: 2px solid #ddd;   
+        border-top: 2px solid #ddd;  
+        
+        @include respond(tab-land){
+            font-size: 3rem; 
+        } 
+        @include respond(tab-port){
+            font-size: 4rem; 
+        } 
+        @include respond(phone-small){
+            font-size: 2.8rem; 
+        } 
+        @include respond(phone-smaller){
+            font-size: 3.8rem; 
+        } 
+
       
         
         &--name,
@@ -70,7 +84,18 @@
             font-family:   'Lato', 'PT Sans Caption', sans-serif;
             transition: all .15s;
 
-            
+            @include respond(tab-land){
+                font-size: 3rem; 
+            } 
+            @include respond(tab-port){
+                font-size: 4rem; 
+            } 
+            @include respond(phone-small){
+                font-size: 3rem; 
+            } 
+            @include respond(phone-smaller){
+                font-size: 3.8rem; 
+            } 
         }
         
         &--name{
@@ -93,10 +118,15 @@
             color: #fff;
             font-weight: 600;
             letter-spacing: 1px;
-            transition: all .1s;
+            transition: all .1s;                
+            outline: none;
+
 
             &:active {
                 transform: translateY(2px);
+            }
+            &:hover {
+                background-color: #7dd3f5;
             }
             
         }

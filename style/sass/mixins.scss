@@ -2,11 +2,23 @@
     @if $size == tab-land {
         @media only screen and (max-width: 75em) // 1200px
             {@content};
-    }
+    };
     @if $size == tab-port {
         @media only screen and (max-width: 56em)  // 900px
             {@content};
-    }
+    };
+    @if $size == phone-big {
+        @media only screen and (max-width: 37.5em)  // 600px
+            {@content};
+    };
+    @if $size == phone-small {
+        @media only screen and (max-width: 32em)  // 500px
+            {@content};
+    };
+    @if $size == phone-smaller {
+        @media only screen and (max-width: 22.5em)  // 360px
+            {@content};
+    };
 }
 
 @mixin bugFix {
@@ -19,3 +31,6 @@
     -webkit-font-smoothing: subpixel-antialiased;
     
 }
+
+$text-shadow: .3rem .2rem .3rem rgba(0,0,0,.4);
+

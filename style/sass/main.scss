@@ -1,4 +1,5 @@
-@import "mixins";
+@import "mixins.scss";
+
 @import "layout/bio.scss";
 @import "layout/contact.scss";
 @import "layout/footer.scss";
@@ -30,6 +31,15 @@ html {
     }
     @include respond(tab-port){
         font-size: 37.5%; // 1rem = 6px;
+    }
+    @include respond(phone-big){
+        font-size: 32%; // 5px
+    };
+    @include respond(phone-small){
+        font-size: 25%;
+    }
+    @include respond(phone-smaller){
+        font-size: 18.75%;
     }
     
 }

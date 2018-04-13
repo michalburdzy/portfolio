@@ -1,48 +1,72 @@
 .bio {
+  z-index: 30;
   grid-column: 1 / -1;
   justify-self: stretch;
-  background-image: linear-gradient(#ecffd4, #deffb8);
-  padding: 15rem 0 15rem 0;
-  margin-top: -5rem;
+  justify-items: center;
+  background-image: linear-gradient(transparent 0, #f4ffe5 10%, #deffb8 100%);
+  padding: 20rem 0 15rem 0;
+  margin-top: -10rem;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
-  font-family: 'PT Sans Caption', sans-serif;
-  background-color: #ececf3; }
+  font-family: 'PT Sans Caption', sans-serif; }
   .bio__container {
     display: grid;
-    grid-template-areas: "me-head me-head photo tec-head " "me      me      photo     techno" "me      me      biobutton         techno";
-    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: "header header   header    header" "me-head me-head photo     tec-head " "me      me      photo     techno" "me      me      biobutton         techno";
+    grid-template-rows: repeat(4, max-content);
     grid-template-columns: repeat(4, 1fr);
-    margin: 0 15%;
     grid-column-gap: 1rem;
     background-color: #ececf3;
     background-color: #fff;
+    opacity: .9;
     color: #fff;
     overflow: hidden;
     padding: .8rem;
-    opacity: .9;
+    margin: 0 10%;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0.1rem 1rem 1rem rgba(0, 0, 0, 0.3); }
+    @media only screen and (max-width: 37.5em) {
+      .bio__container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "header    header    header" "me-head  me-head me-head" "me       me       me" "photo    techno   techno" "photo     techno   techno" "biobutton tec-head tec-head"; } }
+  .bio__header {
+    display: block;
+    color: #4b750c;
+    font-size: 5rem;
+    font-weight: 500;
+    grid-area: header;
+    justify-self: center;
+    align-self: start;
+    text-align: center;
+    margin-bottom: 10rem;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4); }
   .bio__about {
-    grid-area: me;
-    font-size: 3rem;
-    letter-spacing: -1px; }
+    grid-area: me; }
+    .bio__about--text {
+      padding: 3rem 2rem 1rem 2rem;
+      font-size: 3rem;
+      letter-spacing: -1px; }
+      @media only screen and (max-width: 75em) {
+        .bio__about--text {
+          font-size: 2.6rem;
+          letter-spacing: 0; } }
+      @media only screen and (max-width: 37.5em) {
+        .bio__about--text {
+          font-size: 3.2rem; } }
     .bio__about--header {
       grid-area: me-head;
       font-size: 3.8rem;
-      justify-self: center;
       margin-bottom: 5px; }
   .bio__photo {
     position: relative;
     grid-area: photo;
-    align-self: end;
     width: 100%;
     filter: sepia(20%);
     border-radius: 8px;
     cursor: pointer;
     transition: all .3s;
     margin-bottom: 5px;
-    overflow: hidden; }
+    overflow: hidden;
+    align-self: start; }
     .bio__photo--glasses {
       position: absolute;
       top: -10%;
@@ -68,6 +92,9 @@
     cursor: pointer;
     transition: all .1s;
     text-decoration: none; }
+    @media only screen and (max-width: 37.5em) {
+      .bio__button:link, .bio__button:visited {
+        height: 100%; } }
     .bio__button:link:hover, .bio__button:visited:hover {
       transform: translateY(-2px);
       background-color: #93e0ff; }
@@ -75,12 +102,11 @@
       transform: translateY(3px);
       box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4); }
   .bio__technologies {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
     grid-area: techno;
-    align-content: space-around;
-    justify-content: space-around;
-    font-size: 2.8rem; }
+    font-size: 2.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
     .bio__technologies--header {
       grid-area: tec-head;
       font-size: 3.8rem;
@@ -89,22 +115,31 @@
       margin-bottom: 5px;
       background-color: #87ceeb;
       color: white; }
+      @media only screen and (max-width: 37.5em) {
+        .bio__technologies--header {
+          align-self: start;
+          margin-bottom: 0; } }
     .bio__technologies-logo {
       background-image: url("./img/JS.png");
+      background-position: center;
       width: 7rem;
-      height: 7rem;
+      height: auto;
+      padding-top: 7rem;
       background-size: cover;
-      border-radius: 50%;
+      border-radius: 5px;
       box-shadow: 0.1rem 0.5rem 0.2rem rgba(0, 0, 0, 0.3);
       transition: all .2s;
       cursor: pointer;
-      border: 2px solid #fff; }
+      border: 2px solid #fff;
+      margin: .3rem; }
+      @media only screen and (max-width: 37.5em) {
+        .bio__technologies-logo {
+          width: 12rem;
+          height: 12rem; } }
       .bio__technologies-logo:hover {
         transform: scale(1.1);
         filter: brightness(110%); }
   .bio--item {
-    align-self: stretch;
-    justify-self: stretch;
     border-radius: 8px;
     background-color: #87ceeb;
     color: white;
@@ -121,10 +156,13 @@
   flex-direction: column;
   align-items: center;
   clip-path: polygon(0 0, 50% 8rem, 100% 0, 100% 100%, 0 100%);
-  padding-top: 10rem; }
+  padding: 6rem 0 8rem 0; }
   .contact__header {
-    font-size: 3rem;
-    margin: 4rem auto; }
+    font-size: 5rem;
+    font-weight: 400;
+    margin: 8rem auto;
+    color: #fff;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4); }
 
 .footer {
   grid-column: 1/ -1;
@@ -174,7 +212,7 @@
     background-repeat: no-repeat; }
 
 .projects {
-  margin-bottom: 15rem;
+  margin-bottom: 12rem;
   grid-column: 1 / span 10;
   max-width: 100%;
   display: grid;
@@ -188,10 +226,10 @@
     grid-column: 1 / span 10;
     align-self: center;
     justify-self: center;
-    font-size: 5.4rem;
-    font-weight: 400;
+    font-size: 5rem;
+    font-weight: 500;
     text-align: center;
-    color: #58811b;
+    color: #4b750c;
     text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4); }
   .projects__gallery {
     display: block;
@@ -206,8 +244,6 @@
     overflow: hidden;
     grid-row: span 4;
     grid-column: span 2;
-    background-size: cover;
-    background-position: center;
     cursor: pointer;
     animation: appear .5s backwards;
     animation-play-state: paused;
@@ -223,6 +259,7 @@
       width: 100%;
       height: 100%;
       background-size: cover;
+      background-position: center;
       z-index: -1;
       transition: all .3s; }
     .projects__gallery--header, .projects__gallery--footer {
@@ -450,6 +487,18 @@
     font-family: 'Lato', 'PT Sans Caption', sans-serif;
     border: none;
     border-top: 2px solid #ddd; }
+    @media only screen and (max-width: 75em) {
+      .form__input {
+        font-size: 3rem; } }
+    @media only screen and (max-width: 56em) {
+      .form__input {
+        font-size: 4rem; } }
+    @media only screen and (max-width: 32em) {
+      .form__input {
+        font-size: 2.8rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .form__input {
+        font-size: 3.8rem; } }
     .form__input--name, .form__input--email {
       border-bottom: 2px solid #ddd; }
       .form__input--name:focus, .form__input--email:focus {
@@ -463,6 +512,18 @@
       margin-left: .1rem;
       font-family: 'Lato', 'PT Sans Caption', sans-serif;
       transition: all .15s; }
+      @media only screen and (max-width: 75em) {
+        .form__input--label {
+          font-size: 3rem; } }
+      @media only screen and (max-width: 56em) {
+        .form__input--label {
+          font-size: 4rem; } }
+      @media only screen and (max-width: 32em) {
+        .form__input--label {
+          font-size: 3rem; } }
+      @media only screen and (max-width: 22.5em) {
+        .form__input--label {
+          font-size: 3.8rem; } }
     .form__input--name {
       border-right: 1px solid #eee; }
     .form__input--email {
@@ -477,9 +538,12 @@
       color: #fff;
       font-weight: 600;
       letter-spacing: 1px;
-      transition: all .1s; }
+      transition: all .1s;
+      outline: none; }
       .form__input--submit:active {
         transform: translateY(2px); }
+      .form__input--submit:hover {
+        background-color: #7dd3f5; }
     .form__input:placeholder-shown + .form__input--label {
       transform: translateY(-5rem);
       user-select: all;
@@ -489,7 +553,7 @@
   grid-row: 1 / span 5;
   grid-column: 1 / span 2;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   margin-top: -2rem;
   margin-left: 2rem;
   display: grid;
@@ -497,12 +561,21 @@
   padding-top: 15rem;
   padding-bottom: 3rem;
   justify-self: start;
+  box-shadow: 0.3rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   transition: all 0.7s 0.1s cubic-bezier(0.31, -0.27, 0.46, 1);
   transform-origin: top left;
   transform: translateY(-101%) scaleY(0.5); }
   @media only screen and (max-width: 75em) {
     .navbar {
-      grid-column: 1 / span 3; } }
+      grid-column: 1 / span 3;
+      transform: translateY(0) scaleY(1);
+      opacity: 1;
+      grid-row-gap: 2rem;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.4); } }
+  @media only screen and (max-width: 32em) {
+    .navbar {
+      grid-column: 1 / span 4; } }
   .navbar__logo {
     height: 6rem;
     width: 6rem;
@@ -558,6 +631,12 @@
     background-position: 100%;
     transition: all .5s, transform .1s;
     letter-spacing: 1px; }
+    @media only screen and (max-width: 56em) {
+      .navbar__item {
+        font-size: 4rem; } }
+    @media only screen and (max-width: 32em) {
+      .navbar__item {
+        font-size: 5rem; } }
     .navbar__item--link {
       text-decoration: none;
       color: #fff;
@@ -578,7 +657,7 @@
   background-color: transparent;
   color: #fff;
   overflow: hidden;
-  grid-row: 2 / span 3;
+  grid-row: 1 / span 4;
   grid-column: 4 / span 4;
   justify-self: center;
   align-self: center;
@@ -595,6 +674,7 @@
     .screen__text--small {
       letter-spacing: .1em;
       font-size: 3.5rem;
+      font-weight: 400;
       margin-top: 4rem;
       display: block;
       overflow: hidden;
@@ -618,6 +698,15 @@ html {
   @media only screen and (max-width: 56em) {
     html {
       font-size: 37.5%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 32%; } }
+  @media only screen and (max-width: 32em) {
+    html {
+      font-size: 25%; } }
+  @media only screen and (max-width: 22.5em) {
+    html {
+      font-size: 18.75%; } }
 
 body {
   font-family: 'PT Sans Caption', sans-serif;

@@ -1,5 +1,5 @@
 .projects {
-  margin-bottom: 15rem;
+  margin-bottom: 12rem;
     grid-column: 1 / span 10;
 
     // max-width: 90%;
@@ -19,13 +19,13 @@
         grid-column: 1 / span 10;
         align-self: center;
         justify-self: center;
-        font-size: 5.4rem;
-        font-weight: 400;
+        font-size: 5rem;
+        font-weight: 500;
         text-align: center;
         // margin: 6rem auto;
-        color: rgb(88, 129, 27);
+        color: rgb(75, 117, 12);
         // border-bottom: 2px solid rgb(138, 180, 75);
-        text-shadow: .3rem .2rem .3rem rgba(0,0,0,.4);
+        text-shadow: $text-shadow;
       }
     
     // DO PRZETESTOWANIA!!!
@@ -51,8 +51,6 @@
         overflow: hidden;
         grid-row: span 4;
         grid-column: span 2;
-        background-size: cover;
-        background-position: center;
         cursor: pointer;
         animation: appear .5s backwards;
         animation-play-state: paused;
@@ -72,6 +70,8 @@
           height: 100%;
           // background-color: rgba(yellowgreen, .3);
           background-size: cover;
+          background-position: center;
+
           z-index: -1;
           transition: all .3s;
         

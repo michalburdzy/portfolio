@@ -1,58 +1,99 @@
 .bio {
 
+    z-index: 30;
     grid-column: 1 / -1;
         justify-self: stretch;
-        background-image: linear-gradient(rgb(236, 255, 212), rgb(222, 255, 184));
+        justify-items: center;
+        background-image: linear-gradient(transparent 0, rgb(244, 255, 229) 10%, rgb(222, 255, 184) 100%);
 
-        padding: 15rem 0 15rem 0;
-        margin-top: -5rem;
+        padding: 20rem 0 15rem 0;
+        margin-top: -10rem;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
         // background-image: linear-gradient( to top, #ffd 80%, #eee 100%);
         font-family:  'PT Sans Caption', sans-serif;
-        background-color: #ececf3;
+        // background-color: #ececf3;
 
 
     &__container {
         display: grid;
-        grid-template-areas:"me-head me-head photo tec-head "
+        grid-template-areas:"header header   header    header"
+                            "me-head me-head photo     tec-head "
                             "me      me      photo     techno"
                             "me      me      biobutton         techno";
-        grid-template-rows: repeat(3, max-content);
+
+        
+
+        grid-template-rows: repeat(4, max-content);
         grid-template-columns: repeat(4, 1fr);
         // justify-items: center;
         // align-items: center;
-        margin: 0 15%;
         grid-column-gap: 1rem;
 
         background-color: #ececf3;
         background-color: #fff;
         // background-color: rgba(153, 185, 133, .6); // Old Version
-        
+        opacity: .9;
         color: #fff;
         overflow: hidden;
         padding: .8rem;
-        opacity: .9;
+        margin: 0 10%;
 
         text-align: center;
         border-radius: 10px; 
         box-shadow: .1rem 1rem 1rem rgba(0,0,0,.3);
 
+        @include respond(phone-big){
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+            "header    header    header"
+            "me-head  me-head me-head"
+            "me       me       me"
+            "photo    techno   techno"
+            "photo     techno   techno"
+            "biobutton tec-head tec-head";
 
+            
+        }
 
     }
 
+    &__header {
+        display: block;
+        color: rgb(75, 117, 12);
+        font-size: 5rem;
+        font-weight: 500;
+        grid-area: header;
+        justify-self: center;
+        align-self: start;
+        text-align: center;
+        margin-bottom: 10rem;
+        text-shadow: $text-shadow;
+
+        
+    }
 
     &__about {
         
         grid-area: me;
-        font-size: 3rem;
-        letter-spacing: -1px; 
+        
+        &--text {
+            padding: 3rem 2rem 1rem 2rem;
+            font-size: 3rem;
+            letter-spacing: -1px;
+
+            @include respond(tab-land){
+                font-size: 2.6rem;
+                letter-spacing: 0;
+
+            }
+            @include respond(phone-big){
+                font-size: 3.2rem;
+            }
+        }
 
         &--header {
-        //    border-bottom: 1px solid #ddd;
             grid-area: me-head;
             font-size: 3.8rem;
-            justify-self: center;
             margin-bottom: 5px ;
             
         }
@@ -61,19 +102,21 @@
 
         position: relative;
         grid-area: photo;
-        align-self: end;
         width: 100%;
-        // height: 100%;
         filter: sepia(20%);
         border-radius: 8px;
         cursor: pointer;
         transition: all .3s;
-        // clip-path: circle(30% at 50% 40%);
         margin-bottom: 5px ;
         overflow: hidden;
+        align-self: start;
+
+       
 
         &--photo {
-            
+            @include respond(phone-big){
+                // width: 120%;
+            }
         }
         
        
@@ -112,6 +155,10 @@
             transition: all .1s;
             text-decoration: none;
 
+            @include respond (phone-big){
+height: 100%;
+            }
+
             &:hover {
                 transform: translateY(-2px);
                 background-color: #93e0ff;
@@ -126,13 +173,22 @@
         
     }
     &__technologies {
-        
-        display: grid;
-        grid-template-columns: repeat(3, max-content);
         grid-area: techno;
-        align-content: space-around;
-        justify-content: space-around;
+
+        // display: grid;
+        // grid-template-columns: repeat(3, max-content);
+        // align-content: space-around;
+        // justify-content: space-around;
+        
         font-size: 2.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        // align-content: stretch;
+        justify-content: space-between;
+        
+        @include respond(phone-big){
+            // align-self: start;
+        }
         
 
         &--header {
@@ -145,18 +201,37 @@
             background-color: #87ceeb;
             color: white;
 
+            @include respond(phone-big){
+                align-self: start;
+                margin-bottom: 0;
+            }
+
         }
 
         &-logo {
             background-image: url("./img/JS.png");
+            background-position: center;
             width: 7rem;
-            height: 7rem;
+            height: auto;
+            padding-top: 7rem;
             background-size: cover;
-            border-radius: 50%;
+            // border-radius: 50%;
+            border-radius: 5px;
             box-shadow: .1rem .5rem .2rem rgba(0,0,0,.3);
             transition: all .2s;
             cursor: pointer;
             border: 2px solid #fff;
+            margin: .3rem;
+
+            @include respond(phone-big){
+                width: 12rem;
+                height: 12rem;
+            }
+            @include respond(phone-small){
+                // width: 14rem;
+                // height: 14rem;
+            } 
+            
 
             &:hover {
                 transform: scale(1.1);
@@ -186,8 +261,8 @@
         
     }
     &--item {
-        align-self: stretch;
-            justify-self: stretch;
+        // align-self: stretch;
+            // justify-self: stretch;
             border-radius: 8px;
             background-color: #87ceeb;
             color: white;

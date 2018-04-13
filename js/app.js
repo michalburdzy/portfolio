@@ -1,4 +1,8 @@
 
+
+
+
+
 // var allProjects = $('.projects__gallery');
 // var projectsSection = $('.projects');
 // var contactForm = $('.form');
@@ -6,23 +10,21 @@
 window.onload = function(){
     console.log('window loaded!')
 
-// console.log('js ok');
 
-// adding smooth scrolling
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
-});
 
 
 
 
+// console.log('js ok')
 
 var allProjects = document.querySelectorAll('.projects__gallery');
 var projectsSection = document.querySelector('.projects');
