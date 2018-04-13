@@ -13,6 +13,14 @@
     // background-color: #ccc;
     transition: all .3s;
 
+    @include respond(tab-port){
+      grid-gap: 5px;
+    }
+
+    @include respond(phone-smaller){
+      grid-template-rows: 10rem;
+    }
+
     &__header {
 
         grid-row: 1 / span 1;
@@ -26,6 +34,8 @@
         color: rgb(75, 117, 12);
         // border-bottom: 2px solid rgb(138, 180, 75);
         text-shadow: $text-shadow;
+
+        
       }
     
     // DO PRZETESTOWANIA!!!
@@ -116,6 +126,10 @@
           font-size: 2.2rem;
           transform: translateY(-100%) ;
           // padding-top: 1rem ;
+
+          @include respond(tab-land){
+            transform: translateY(0);
+          }
         }
         &--footer {
           font-size: 1.5rem;

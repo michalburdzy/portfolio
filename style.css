@@ -4,16 +4,21 @@
   justify-self: stretch;
   justify-items: center;
   background-image: linear-gradient(transparent 0, #f4ffe5 10%, #deffb8 100%);
-  padding: 20rem 0 15rem 0;
+  padding: 16rem 0 15rem 0;
   margin-top: -10rem;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   font-family: 'PT Sans Caption', sans-serif; }
+  @media only screen and (max-width: 32em) {
+    .bio {
+      margin-top: -5rem;
+      padding-top: 8rem;
+      padding-bottom: 9rem; } }
   .bio__container {
     display: grid;
-    grid-template-areas: "header header   header    header" "me-head me-head photo     tec-head " "me      me      photo     techno" "me      me      biobutton         techno";
-    grid-template-rows: repeat(4, max-content);
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 1rem;
+    grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me       photo         biobutton-1" "me      me         photo      biobutton-2";
+    grid-template-rows: repeat(5, max-content);
+    grid-template-columns: 1fr 1fr minmax(min-content, 0.6fr) 1fr;
+    grid-gap: .4rem;
     background-color: #ececf3;
     background-color: #fff;
     opacity: .9;
@@ -24,10 +29,17 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 0.1rem 1rem 1rem rgba(0, 0, 0, 0.3); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 39.375em) {
       .bio__container {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header    header    header" "me-head  me-head me-head" "me       me       me" "photo    techno   techno" "photo     techno   techno" "biobutton tec-head tec-head"; } }
+        grid-template-areas: "header    header    header     header" "me-head  me-head me-head       me-head" "me       me       me           me" "photo    techno   techno techno" "biobutton-1     techno   techno techno" "biobutton-2 tec-head tec-head tec-head"; } }
+  .bio--item {
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3);
+    padding: .4rem;
+    background-color: #87ceeb; }
   .bio__header {
     display: block;
     color: #4b750c;
@@ -39,6 +51,9 @@
     text-align: center;
     margin-bottom: 10rem;
     text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4); }
+    @media only screen and (max-width: 39.375em) {
+      .bio__header {
+        margin-bottom: 5rem; } }
   .bio__about {
     grid-area: me; }
     .bio__about--text {
@@ -48,8 +63,10 @@
       @media only screen and (max-width: 75em) {
         .bio__about--text {
           font-size: 2.6rem;
-          letter-spacing: 0; } }
-      @media only screen and (max-width: 37.5em) {
+          letter-spacing: 0;
+          padding: 1.5rem 1rem .5rem 1rem;
+          font-size: 2.5rem; } }
+      @media only screen and (max-width: 39.375em) {
         .bio__about--text {
           font-size: 3.2rem; } }
     .bio__about--header {
@@ -59,40 +76,53 @@
   .bio__photo {
     position: relative;
     grid-area: photo;
-    width: 100%;
     filter: sepia(20%);
     border-radius: 8px;
     cursor: pointer;
     transition: all .3s;
-    margin-bottom: 5px;
     overflow: hidden;
-    align-self: start; }
+    align-self: center;
+    background-color: transparent;
+    box-shadow: none; }
+    .bio__photo--photo {
+      width: 100%;
+      background-color: transparent;
+      box-shadow: none; }
+      @media only screen and (max-width: 39.375em) {
+        .bio__photo--photo {
+          max-width: 16em; } }
+      @media only screen and (max-width: 22.5em) {
+        .bio__photo--photo {
+          max-width: 12em; } }
     .bio__photo--glasses {
       position: absolute;
       top: -10%;
-      left: 22%;
-      width: 50%;
+      left: 18%;
+      width: 65%;
       grid-area: photo;
       opacity: 0;
       transition: all .3s; }
     .bio__photo:active + .bio__photo--glasses {
-      transform: translateY(145%);
+      transform: translateY(146%);
       opacity: 1; }
     .bio__photo:active {
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
       filter: grayscale(100%); }
+  .bio__button--1 {
+    grid-area: biobutton-1; }
+  .bio__button--2 {
+    grid-area: biobutton-2; }
   .bio__button:link, .bio__button:visited {
-    grid-area: biobutton;
-    height: 5rem;
+    max-height: 5rem;
     width: 100%;
     background-color: #87ceeb;
     border-radius: 8px;
-    font-size: 3.8rem;
-    line-height: 3.8rem;
+    font-size: 2.8rem;
+    line-height: 4rem;
     cursor: pointer;
     transition: all .1s;
     text-decoration: none; }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 39.375em) {
       .bio__button:link, .bio__button:visited {
         height: 100%; } }
     .bio__button:link:hover, .bio__button:visited:hover {
@@ -106,7 +136,8 @@
     font-size: 2.8rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    align-content: start;
+    justify-content: space-evenly; }
     .bio__technologies--header {
       grid-area: tec-head;
       font-size: 3.8rem;
@@ -115,16 +146,16 @@
       margin-bottom: 5px;
       background-color: #87ceeb;
       color: white; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 39.375em) {
         .bio__technologies--header {
           align-self: start;
-          margin-bottom: 0; } }
+          margin-bottom: 0;
+          height: 100%; } }
     .bio__technologies-logo {
       background-image: url("./img/JS.png");
       background-position: center;
-      width: 7rem;
-      height: auto;
-      padding-top: 7rem;
+      width: 6rem;
+      height: 6rem;
       background-size: cover;
       border-radius: 5px;
       box-shadow: 0.1rem 0.5rem 0.2rem rgba(0, 0, 0, 0.3);
@@ -132,21 +163,21 @@
       cursor: pointer;
       border: 2px solid #fff;
       margin: .3rem; }
-      @media only screen and (max-width: 37.5em) {
+      @media only screen and (max-width: 39.375em) {
         .bio__technologies-logo {
-          width: 12rem;
-          height: 12rem; } }
+          width: 10rem;
+          height: 10rem; } }
+      @media only screen and (max-width: 32em) {
+        .bio__technologies-logo {
+          width: 8rem;
+          height: 8rem; } }
+      @media only screen and (max-width: 22.5em) {
+        .bio__technologies-logo {
+          width: 6rem;
+          height: 6rem; } }
       .bio__technologies-logo:hover {
         transform: scale(1.1);
         filter: brightness(110%); }
-  .bio--item {
-    border-radius: 8px;
-    background-color: #87ceeb;
-    color: white;
-    overflow: hidden;
-    box-shadow: 0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.3); }
-    .bio--item:not(.bio__photo) {
-      padding: .4rem; }
 
 .contact {
   background-color: #ddd;
@@ -221,6 +252,12 @@
   grid-auto-rows: minmax(1vw, 3vw);
   grid-gap: 15px;
   transition: all .3s; }
+  @media only screen and (max-width: 56em) {
+    .projects {
+      grid-gap: 5px; } }
+  @media only screen and (max-width: 22.5em) {
+    .projects {
+      grid-template-rows: 10rem; } }
   .projects__header {
     grid-row: 1 / span 1;
     grid-column: 1 / span 10;
@@ -276,6 +313,9 @@
       right: 0;
       font-size: 2.2rem;
       transform: translateY(-100%); }
+      @media only screen and (max-width: 75em) {
+        .projects__gallery--header {
+          transform: translateY(0); } }
     .projects__gallery--footer {
       font-size: 1.5rem;
       font-weight: 600;
@@ -444,7 +484,15 @@
   animation: moveInButton .6s backwards;
   animation-delay: 3.5s;
   text-decoration: none;
-  box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  background-color: #444; }
+  @media only screen and (max-width: 32em) {
+    .header__button:link, .header__button:visited {
+      grid-column: 1 / span 11;
+      background-color: #444; } }
+  @media only screen and (max-width: 32em) {
+    .header__button:link, .header__button:visited {
+      grid-row: 6 / span 1; } }
   .header__button:link:hover, .header__button:visited:hover {
     color: #fff;
     border-color: #fff;
@@ -556,12 +604,14 @@
   background-color: rgba(0, 0, 0, 0.2);
   margin-top: -2rem;
   margin-left: 2rem;
+  opacity: 0;
   display: grid;
   grid-row-gap: 4rem;
   padding-top: 15rem;
   padding-bottom: 3rem;
   justify-self: start;
   box-shadow: 0.3rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+  z-index: 200;
   transition: all 0.7s 0.1s cubic-bezier(0.31, -0.27, 0.46, 1);
   transform-origin: top left;
   transform: translateY(-101%) scaleY(0.5); }
@@ -572,10 +622,20 @@
       opacity: 1;
       grid-row-gap: 2rem;
       font-weight: bold;
-      background-color: rgba(0, 0, 0, 0.4); } }
+      background-color: rgba(0, 0, 0, 0.7);
+      padding-top: 10rem;
+      grid-row-gap: 2rem; } }
   @media only screen and (max-width: 32em) {
     .navbar {
-      grid-column: 1 / span 4; } }
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(max-content, 1fr);
+      grid-column: 1/ span 8;
+      padding: 2rem .8rem .1rem 14rem;
+      margin-left: 0;
+      transform: translateY(0) scaleY(1); } }
+  @media only screen and (max-width: 22.5em) {
+    .navbar {
+      padding-left: 5rem; } }
   .navbar__logo {
     height: 6rem;
     width: 6rem;
@@ -587,16 +647,30 @@
     border: 2px solid #fff;
     border-radius: 100%;
     margin: 2rem;
-    z-index: 10;
+    z-index: 300;
     position: relative;
     transition: all .2s;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-left: 3rem; }
+    @media only screen and (max-width: 32em) {
+      .navbar__logo {
+        margin: .5rem;
+        height: 5rem;
+        width: 5rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .navbar__logo {
+        height: 4.5rem;
+        width: 4.5rem; } }
     .navbar__logo-text {
-      line-height: 6rem;
+      line-height: 100%;
       text-align: center;
       font-size: 2.5rem;
       color: #fff;
-      z-index: 11; }
+      z-index: 11;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .navbar__logo::after {
       content: '';
       height: 100%;
@@ -636,7 +710,8 @@
         font-size: 4rem; } }
     @media only screen and (max-width: 32em) {
       .navbar__item {
-        font-size: 5rem; } }
+        font-size: 3.5rem;
+        letter-spacing: 0; } }
     .navbar__item--link {
       text-decoration: none;
       color: #fff;
@@ -663,6 +738,12 @@
   align-self: center;
   margin-top: 5rem;
   text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.3); }
+  @media only screen and (max-width: 56em) {
+    .screen {
+      grid-column: 1 / span 11; } }
+  @media only screen and (max-width: 32em) {
+    .screen {
+      grid-row: 2 / span 2; } }
   .screen__text {
     font-size: 4.5rem;
     font-weight: 400;
@@ -698,7 +779,7 @@ html {
   @media only screen and (max-width: 56em) {
     html {
       font-size: 37.5%; } }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 39.375em) {
     html {
       font-size: 32%; } }
   @media only screen and (max-width: 32em) {

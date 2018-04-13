@@ -29,6 +29,18 @@ window.onload = function(){
 var allProjects = document.querySelectorAll('.projects__gallery');
 var projectsSection = document.querySelector('.projects');
 var contactForm = document.querySelector('.form');
+var contactSection = document.querySelector('.contact');
+
+// In case scroll event not working
+contactSection.addEventListener("click", function(){
+    contactForm.classList.add('animation-appear');
+})
+projectsSection.addEventListener("click", function(){
+    for (var i = 0; i < allProjects.length; i++) {
+        allProjects[i].classList.add('animation-appear');
+        console.log('added class to gallery item!')
+    }
+})
 
 
 var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);

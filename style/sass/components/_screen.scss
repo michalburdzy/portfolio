@@ -10,6 +10,16 @@
     margin-top: 5rem;
     text-shadow: .1rem .1rem .1rem rgba(0,0,0, .3);
 
+    @include respond(tab-port){
+        grid-column: 1 / span 11;
+    }
+    @include respond(phone-small){
+        grid-row: 2 / span 2;
+    }
+    // @include respond(phone-smaller){
+    //     grid-row: 2 / span 2;
+    // }
+
 
 
     &__text {

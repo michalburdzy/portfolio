@@ -6,28 +6,36 @@
         justify-items: center;
         background-image: linear-gradient(transparent 0, rgb(244, 255, 229) 10%, rgb(222, 255, 184) 100%);
 
-        padding: 20rem 0 15rem 0;
+        padding: 16rem 0 15rem 0;
         margin-top: -10rem;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
         // background-image: linear-gradient( to top, #ffd 80%, #eee 100%);
         font-family:  'PT Sans Caption', sans-serif;
         // background-color: #ececf3;
 
+        @include respond(phone-small){
+            margin-top: -5rem;
+            padding-top: 8rem;
+            padding-bottom: 9rem;
+        }
+
 
     &__container {
         display: grid;
-        grid-template-areas:"header header   header    header"
-                            "me-head me-head photo     tec-head "
-                            "me      me      photo     techno"
-                            "me      me      biobutton         techno";
+        grid-template-areas:"header  header  header              header"
+                            "me-head me-head me-head             tec-head "
+                            "me      me      photo               techno"
+                            "me      me       photo         biobutton-1"
+                            "me      me         photo      biobutton-2";
 
         
 
-        grid-template-rows: repeat(4, max-content);
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, max-content);
+        // grid-template-columns: repeat(4, minmax);
+        grid-template-columns: 1fr 1fr minmax(min-content, .6fr) 1fr;
         // justify-items: center;
         // align-items: center;
-        grid-column-gap: 1rem;
+        grid-gap: .4rem;
 
         background-color: #ececf3;
         background-color: #fff;
@@ -45,15 +53,28 @@
         @include respond(phone-big){
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
-            "header    header    header"
-            "me-head  me-head me-head"
-            "me       me       me"
-            "photo    techno   techno"
-            "photo     techno   techno"
-            "biobutton tec-head tec-head";
+            "header    header    header     header"
+            "me-head  me-head me-head       me-head"
+            "me       me       me           me"
+            "photo    techno   techno techno"
+            "biobutton-1     techno   techno techno"
+            "biobutton-2 tec-head tec-head tec-head";
 
             
         }
+
+    }
+
+    &--item {
+        // align-self: stretch;
+            // justify-self: stretch;
+            border-radius: 8px;
+            color: white;
+            // margin: 1rem;
+            overflow:hidden;
+            box-shadow: .2rem .2rem .3rem rgba(0,0,0,.3);
+            padding: .4rem;
+            background-color: #87ceeb;
 
     }
 
@@ -69,6 +90,9 @@
         margin-bottom: 10rem;
         text-shadow: $text-shadow;
 
+        @include respond(phone-big){
+            margin-bottom: 5rem;    
+        }
         
     }
 
@@ -84,6 +108,8 @@
             @include respond(tab-land){
                 font-size: 2.6rem;
                 letter-spacing: 0;
+                padding: 1.5rem 1rem .5rem 1rem;
+                font-size: 2.5rem;
 
             }
             @include respond(phone-big){
@@ -102,20 +128,32 @@
 
         position: relative;
         grid-area: photo;
-        width: 100%;
+        // height: 80%;
         filter: sepia(20%);
         border-radius: 8px;
         cursor: pointer;
         transition: all .3s;
-        margin-bottom: 5px ;
         overflow: hidden;
-        align-self: start;
+        align-self: center;
+        // clip-path: circle(40% at 50% 40%);
+        background-color: transparent;
+        box-shadow: none;
 
        
 
         &--photo {
+            // background-color: #fff;
+            width: 100%;
+            background-color: transparent;
+            box-shadow: none;
+
+
             @include respond(phone-big){
-                // width: 120%;
+                max-width: 16em;
+
+            }
+            @include respond(phone-smaller){
+                max-width: 12em;            
             }
         }
         
@@ -123,15 +161,15 @@
         &--glasses {
             position: absolute;
             top: -10%;
-            left: 22%;
-            width: 50%;
+            left: 18%;
+            width: 65%;
             grid-area: photo;
             opacity: 0;
             transition: all .3s;
         }
 
         &:active + &--glasses{
-            transform: translateY(145%);
+            transform: translateY(146%);
             opacity: 1;
         }
         &:active {
@@ -142,21 +180,31 @@
     }
 
     &__button {
+
+        &--1{
+            grid-area: biobutton-1;
+        }
+        &--2{
+            grid-area: biobutton-2;
+        }
+
         &:link,
         &:visited {
-            grid-area: biobutton;
-            height: 5rem;
+            
+            max-height: 5rem;
             width: 100%;
             background-color: #87ceeb;
             border-radius: 8px;
-            font-size: 3.8rem;
-            line-height: 3.8rem;
+            font-size: 2.8rem;
+            line-height: 4rem;
             cursor: pointer;
             transition: all .1s;
             text-decoration: none;
 
+            
+
             @include respond (phone-big){
-height: 100%;
+                height: 100%;
             }
 
             &:hover {
@@ -183,12 +231,9 @@ height: 100%;
         font-size: 2.8rem;
         display: flex;
         flex-wrap: wrap;
-        // align-content: stretch;
-        justify-content: space-between;
-        
-        @include respond(phone-big){
-            // align-self: start;
-        }
+        align-content: start;
+        justify-content: space-evenly;
+
         
 
         &--header {
@@ -204,6 +249,7 @@ height: 100%;
             @include respond(phone-big){
                 align-self: start;
                 margin-bottom: 0;
+                height: 100%;
             }
 
         }
@@ -211,9 +257,9 @@ height: 100%;
         &-logo {
             background-image: url("./img/JS.png");
             background-position: center;
-            width: 7rem;
-            height: auto;
-            padding-top: 7rem;
+            width: 6rem;
+            height: 6rem;
+            // padding-top: 7rem;
             background-size: cover;
             // border-radius: 50%;
             border-radius: 5px;
@@ -224,13 +270,17 @@ height: 100%;
             margin: .3rem;
 
             @include respond(phone-big){
-                width: 12rem;
-                height: 12rem;
+                width: 10rem;
+                height: 10rem;
             }
             @include respond(phone-small){
-                // width: 14rem;
-                // height: 14rem;
+                width: 8rem;
+                height: 8rem;
             } 
+            @include respond(phone-smaller){
+                width: 6rem;
+                height: 6rem;
+            }
             
 
             &:hover {
@@ -260,21 +310,5 @@ height: 100%;
         }
         
     }
-    &--item {
-        // align-self: stretch;
-            // justify-self: stretch;
-            border-radius: 8px;
-            background-color: #87ceeb;
-            color: white;
-            // margin: 1rem;
-            overflow:hidden;
-            box-shadow: .2rem .2rem .3rem rgba(0,0,0,.3);
-
-
-        &:not(.bio__photo) {
-
-            padding: .4rem;
-
-        }
-    }
+    
 }
