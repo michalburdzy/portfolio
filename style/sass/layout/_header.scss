@@ -34,18 +34,18 @@
     background-repeat: no-repeat;
 
     @media (min-resolution: 192dpi) and (max-width: 50em), (max-width: 100em) {
-        background-image: url(./img/background_computer-1600.jpg), linear-gradient(white, pink);
+        background-image: url(./img/background_computer-1600.jpg);
     }
 
     @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 93.75em) {
-        background-image:  url(./img/background_computer-1200.jpg), linear-gradient(green, blue);
+        background-image:  url(./img/background_computer-1200.jpg);
     }
 
     @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
-        background-image: url(./img/background_computer-900.jpg), linear-gradient(orangered, yellow);
+        background-image: url(./img/background_computer-900.jpg);
     }
     @media (min-resolution: 192dpi) and (max-width: 18.75em), (max-width: 37.5em) {
-        background-image:  url(./img/background_computer-600.jpg), linear-gradient(red, blue);
+        background-image:  url(./img/background_computer-600.jpg);
     }
     
     }
