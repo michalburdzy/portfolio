@@ -21,6 +21,19 @@
     // }
 
 
+    // &__icon {
+        
+    //     &-box {
+    //         position: absolute;
+    //         top: 50%;
+    //         left: 0;
+    //     }
+    //     // background-color: greenyellow;
+    //     height: 3.5rem;
+    //     width: 3.5rem;
+    //     fill: #fff;
+    // }
+
 
     &__text {
         font-size: 4.5rem;
@@ -38,6 +51,7 @@
       
 
         &--small {
+            position: relative;
             letter-spacing: .1em; 
             font-size: 3.5rem;
             font-weight: 400;

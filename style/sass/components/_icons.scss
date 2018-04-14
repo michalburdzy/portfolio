@@ -1,0 +1,19 @@
+.icon {
+    &-box {
+        height: 100%;
+        width: 3rem;
+        
+    }
+    fill: #fff;
+    height: 3rem;
+    width: 3rem;
+    margin-bottom: -.5rem;
+
+    &-dark {
+        fill: #555;
+        
+    }
+    &-red {
+        fill: red;
+    }
+}
