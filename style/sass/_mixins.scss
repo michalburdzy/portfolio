@@ -3,16 +3,18 @@
         @media only screen and (max-width: 75em) // 1200px
             {@content};
     };
+
+
     @if $size == tab-port {
         @media only screen and (max-width: 56em)  // 900px
             {@content};
     };
     @if $size == phone-big {
-        @media only screen and (max-width: 39.375em)  // 600px
+        @media only screen and (max-width: 37.375em)  // 600px
             {@content};
     };
     @if $size == phone-small {
-        @media only screen and (max-width: 32em)  // 500px
+        @media only screen and (max-width: 31.25em)  // 500px
             {@content};
     };
     @if $size == phone-smaller {

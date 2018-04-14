@@ -8,16 +8,22 @@
   margin-top: -10rem;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
   font-family: 'PT Sans Caption', sans-serif; }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     .bio {
-      margin-top: -5rem;
-      padding-top: 8rem;
+      margin-top: -9rem;
+      padding-top: 12rem;
+      padding-bottom: 9rem; } }
+  @media only screen and (max-width: 22.5em) {
+    .bio {
+      margin-top: -7rem;
+      padding-top: 12rem;
       padding-bottom: 9rem; } }
   .bio__container {
     display: grid;
     grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me       photo         biobutton-1" "me      me         photo      biobutton-2";
+    grid-template-rows: repeat(5, max-content);
     grid-template-columns: 1fr 1fr minmax(min-content, 0.6fr) 1fr;
-    grid-gap: .8rem;
+    grid-gap: .4rem;
     background-color: #ececf3;
     background-color: #fff;
     opacity: .9;
@@ -28,10 +34,10 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 0.1rem 1rem 1rem rgba(0, 0, 0, 0.3); }
-    @media only screen and (max-width: 39.375em) {
+    @media only screen and (max-width: 37.375em) {
       .bio__container {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header    header    header" "me-head  me-head me-head " "me       me       me    " "photo      tec-head tec-head" "photo    techno techno" "biobutton-2 biobutton-2 biobutton-1"; } }
+        grid-template-areas: "header    header    header     header" "me-head  me-head me-head       me-head" "me       me       me           me" "photo    techno   techno techno" "biobutton-1     techno   techno techno" "biobutton-2 tec-head tec-head tec-head"; } }
   .bio--item {
     border-radius: 8px;
     color: white;
@@ -50,7 +56,7 @@
     text-align: center;
     margin-bottom: 10rem;
     text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.4); }
-    @media only screen and (max-width: 39.375em) {
+    @media only screen and (max-width: 37.375em) {
       .bio__header {
         margin-bottom: 5rem; } }
   .bio__about {
@@ -65,7 +71,7 @@
           letter-spacing: 0;
           padding: 1.5rem 1rem .5rem 1rem;
           font-size: 2.5rem; } }
-      @media only screen and (max-width: 39.375em) {
+      @media only screen and (max-width: 37.375em) {
         .bio__about--text {
           font-size: 3.2rem; } }
     .bio__about--header {
@@ -79,7 +85,6 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all .3s;
-    overflow: hidden;
     align-self: center;
     background-color: transparent;
     box-shadow: none; }
@@ -87,7 +92,7 @@
       width: 100%;
       background-color: transparent;
       box-shadow: none; }
-      @media only screen and (max-width: 39.375em) {
+      @media only screen and (max-width: 37.375em) {
         .bio__photo--photo {
           max-width: 16em; } }
       @media only screen and (max-width: 22.5em) {
@@ -95,37 +100,37 @@
           max-width: 12em; } }
     .bio__photo--glasses {
       position: absolute;
-      top: -10%;
-      left: 18%;
-      width: 65%;
+      top: 27%;
+      left: 14%;
+      width: 70%;
       grid-area: photo;
       opacity: 0;
-      transition: all .3s; }
-    .bio__photo:active + .bio__photo--glasses {
-      transform: translateY(146%);
-      opacity: 1; }
+      transition: all .3s;
+      transform: translateY(-200%); }
     .bio__photo:active {
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
       filter: grayscale(100%); }
+    .bio__photo:active > .bio__photo--glasses {
+      transform: translateY(0);
+      opacity: 1; }
   .bio__button--1 {
     grid-area: biobutton-1; }
   .bio__button--2 {
     grid-area: biobutton-2; }
   .bio__button:link, .bio__button:visited {
-    align-self: center;
-    vertical-align: end;
+    max-height: 5rem;
     width: 100%;
     background-color: #87ceeb;
     border-radius: 8px;
     font-size: 2.8rem;
-    line-height: 5rem;
+    line-height: 4rem;
     cursor: pointer;
     transition: all .1s;
     text-decoration: none; }
-    @media only screen and (max-width: 39.375em) {
+    @media only screen and (max-width: 37.375em) {
       .bio__button:link, .bio__button:visited {
         height: 100%; } }
-    .bio__button:link:hover, .bio__button:visited:hover {
+    .bio__button:link:hover, .bio__button:link:focus, .bio__button:visited:hover, .bio__button:visited:focus {
       transform: translateY(-2px);
       background-color: #93e0ff; }
     .bio__button:link:active, .bio__button:visited:active {
@@ -137,7 +142,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    justify-content: space-between; }
+    justify-content: space-evenly; }
     .bio__technologies--header {
       grid-area: tec-head;
       font-size: 3.8rem;
@@ -146,7 +151,7 @@
       margin-bottom: 5px;
       background-color: #87ceeb;
       color: white; }
-      @media only screen and (max-width: 39.375em) {
+      @media only screen and (max-width: 37.375em) {
         .bio__technologies--header {
           align-self: start;
           margin-bottom: 0;
@@ -163,11 +168,11 @@
       cursor: pointer;
       border: 2px solid #fff;
       margin: .3rem; }
-      @media only screen and (max-width: 39.375em) {
+      @media only screen and (max-width: 37.375em) {
         .bio__technologies-logo {
-          width: 8rem;
-          height: 8rem; } }
-      @media only screen and (max-width: 32em) {
+          width: 10rem;
+          height: 10rem; } }
+      @media only screen and (max-width: 31.25em) {
         .bio__technologies-logo {
           width: 8rem;
           height: 8rem; } }
@@ -234,13 +239,23 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url(./img/background_computer.jpg);
-    background-image: linear-gradient(to bottom, transparent 0%, transparent 93%, rgba(252, 255, 224, 0.9) 100%), url(./img/background_computer.jpg);
-    filter: hue-rotate(50deg) brightness(80%);
+    background-image: url(./img/background_computer-2000.jpg);
     filter: hue-rotate(35deg);
-    background-size: 120%;
+    background-size: cover;
     background-position: center top;
     background-repeat: no-repeat; }
+    @media (min-resolution: 192dpi) and (max-width: 50em), (max-width: 100em) {
+      .header::after {
+        background-image: url(./img/background_computer-1600.jpg), linear-gradient(white, pink); } }
+    @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 93.75em) {
+      .header::after {
+        background-image: url(./img/background_computer-1200.jpg), linear-gradient(green, blue); } }
+    @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+      .header::after {
+        background-image: url(./img/background_computer-900.jpg), linear-gradient(orangered, yellow); } }
+    @media (min-resolution: 192dpi) and (max-width: 18.75em), (max-width: 37.5em) {
+      .header::after {
+        background-image: url(./img/background_computer-600.jpg), linear-gradient(red, blue); } }
 
 .projects {
   margin-bottom: 12rem;
@@ -254,10 +269,12 @@
   transition: all .3s; }
   @media only screen and (max-width: 56em) {
     .projects {
-      grid-gap: 5px; } }
+      grid-gap: 5px;
+      margin-bottom: 5rem; } }
   @media only screen and (max-width: 22.5em) {
     .projects {
-      grid-template-rows: 10rem; } }
+      grid-template-rows: 10rem;
+      margin-bottom: 2rem; } }
   .projects__header {
     grid-row: 1 / span 1;
     grid-column: 1 / span 10;
@@ -337,13 +354,25 @@
       animation-delay: .1s;
       background-color: transparent; }
       .projects__gallery--1-background {
-        background-image: url(./img/borrowMe.jpg); }
+        background-image: url(./img/borrowMe-900.jpg); }
+        @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+          .projects__gallery--1-background {
+            background-image: url(./img/borrowMe-700.jpg); } }
+        @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+          .projects__gallery--1-background {
+            background-image: url(./img/borrowMe-550.jpg); } }
     .projects__gallery--2 {
       grid-column: 5/ span 3;
       grid-row: 2 / span 3;
       animation-delay: .2s; }
       .projects__gallery--2-background {
-        background-image: url(./img/RQM.jpg); }
+        background-image: url(./img/RQM-900.jpg); }
+        @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+          .projects__gallery--2-background {
+            background-image: url(./img/RQM-700.jpg); } }
+        @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+          .projects__gallery--2-background {
+            background-image: url(./img/RQM-550.jpg); } }
     .projects__gallery--3 {
       grid-column: 8/ span 2;
       grid-row: 2 / span 3;
@@ -368,7 +397,13 @@
       grid-row: 7 / span 5;
       animation-delay: .6s; }
       .projects__gallery--6-background {
-        background-image: url("./img/PomodoroClock.jpg"); }
+        background-image: url("./img/PomodoroClock-900.jpg"); }
+        @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+          .projects__gallery--6-background {
+            background-image: url(./img/PomodoroClock-700.jpg); } }
+        @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+          .projects__gallery--6-background {
+            background-image: url(./img/PomodoroClock-550.jpg); } }
     .projects__gallery--7 {
       grid-column: 5 / span 4;
       grid-row: 8 / span 4;
@@ -469,7 +504,7 @@
 
 .header__button:link, .header__button:visited {
   grid-row: 5 / span 1;
-  grid-column: 4 / span 4;
+  grid-column: 1 / span 10;
   align-self: end;
   justify-self: center;
   font-size: 2.5rem;
@@ -486,11 +521,11 @@
   text-decoration: none;
   box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
   background-color: #444; }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     .header__button:link, .header__button:visited {
       grid-column: 1 / span 11;
       background-color: #444; } }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     .header__button:link, .header__button:visited {
       grid-row: 6 / span 1; } }
   .header__button:link:hover, .header__button:visited:hover {
@@ -541,7 +576,7 @@
     @media only screen and (max-width: 56em) {
       .form__input {
         font-size: 4rem; } }
-    @media only screen and (max-width: 32em) {
+    @media only screen and (max-width: 31.25em) {
       .form__input {
         font-size: 2.8rem; } }
     @media only screen and (max-width: 22.5em) {
@@ -566,7 +601,7 @@
       @media only screen and (max-width: 56em) {
         .form__input--label {
           font-size: 4rem; } }
-      @media only screen and (max-width: 32em) {
+      @media only screen and (max-width: 31.25em) {
         .form__input--label {
           font-size: 3rem; } }
       @media only screen and (max-width: 22.5em) {
@@ -625,7 +660,7 @@
       background-color: rgba(0, 0, 0, 0.7);
       padding-top: 10rem;
       grid-row-gap: 2rem; } }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     .navbar {
       grid-auto-flow: column;
       grid-auto-columns: minmax(max-content, 1fr);
@@ -652,7 +687,7 @@
     transition: all .2s;
     cursor: pointer;
     margin-left: 3rem; }
-    @media only screen and (max-width: 32em) {
+    @media only screen and (max-width: 31.25em) {
       .navbar__logo {
         margin: .5rem;
         height: 5rem;
@@ -708,7 +743,7 @@
     @media only screen and (max-width: 56em) {
       .navbar__item {
         font-size: 4rem; } }
-    @media only screen and (max-width: 32em) {
+    @media only screen and (max-width: 31.25em) {
       .navbar__item {
         font-size: 3.5rem;
         letter-spacing: 0; } }
@@ -741,7 +776,7 @@
   @media only screen and (max-width: 56em) {
     .screen {
       grid-column: 1 / span 11; } }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     .screen {
       grid-row: 2 / span 2; } }
   .screen__text {
@@ -779,10 +814,10 @@ html {
   @media only screen and (max-width: 56em) {
     html {
       font-size: 37.5%; } }
-  @media only screen and (max-width: 39.375em) {
+  @media only screen and (max-width: 37.375em) {
     html {
       font-size: 32%; } }
-  @media only screen and (max-width: 32em) {
+  @media only screen and (max-width: 31.25em) {
     html {
       font-size: 25%; } }
   @media only screen and (max-width: 22.5em) {

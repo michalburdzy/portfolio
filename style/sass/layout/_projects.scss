@@ -1,24 +1,23 @@
 .projects {
-  margin-bottom: 12rem;
+    margin-bottom: 12rem;
     grid-column: 1 / span 10;
-
-    // max-width: 90%;
     max-width: 100%;
-    // margin: 0 10rem;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 20rem;
     grid-auto-rows: minmax(1vw, 3vw);
     grid-gap: 15px;
-    // background-color: #ccc;
     transition: all .3s;
 
     @include respond(tab-port){
       grid-gap: 5px;
+      margin-bottom: 5rem;
+
     }
 
     @include respond(phone-smaller){
       grid-template-rows: 10rem;
+      margin-bottom: 2rem; 
     }
 
     &__header {
@@ -178,7 +177,14 @@
           background-color: transparent;
 
           &-background {
-            background-image: url(./img/borrowMe.jpg);
+            background-image: url(./img/borrowMe-900.jpg);
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url(./img/borrowMe-700.jpg);
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url(./img/borrowMe-550.jpg);
+            }
           }
           
           
@@ -189,7 +195,14 @@
           animation-delay: .2s;
 
           &-background {
-            background-image: url(./img/RQM.jpg);
+            background-image: url(./img/RQM-900.jpg);
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url(./img/RQM-700.jpg);
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url(./img/RQM-550.jpg);
+            }
           }
         }
         &--3 {
@@ -227,7 +240,14 @@
           animation-delay: .6s;
 
           &-background {          
-            background-image: url('./img/PomodoroClock.jpg');
+            background-image: url('./img/PomodoroClock-900.jpg');
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url(./img/PomodoroClock-700.jpg);
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url(./img/PomodoroClock-550.jpg);
+            }
           }
         }
         &--7{
