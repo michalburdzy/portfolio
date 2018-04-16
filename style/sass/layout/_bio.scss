@@ -4,14 +4,19 @@
     grid-column: 1 / -1;
         justify-self: stretch;
         justify-items: center;
-        background-image: linear-gradient(transparent 0, rgb(244, 255, 229) 10%, rgb(222, 255, 184) 100%);
+        background-image: linear-gradient(transparent 0, rgb(244, 255, 229) 5%, rgb(222, 255, 184) 100%);
 
         padding: 16rem 0 15rem 0;
-        margin-top: -10rem;
+        margin-top: -5rem;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
         // background-image: linear-gradient( to top, #ffd 80%, #eee 100%);
         font-family:  'PT Sans Caption', sans-serif;
         // background-color: #ececf3;
+
+        @include respond(phone-big){
+            margin-top: -6rem;
+
+        }
 
         @include respond(phone-small){
             margin-top: -9rem;
@@ -32,6 +37,12 @@
                             "me      me      photo               techno"
                             "me      me       photo         biobutton-1"
                             "me      me         photo      biobutton-2";
+
+                            grid-template-areas:"header  header  header              header"
+                            "me-head me-head me-head             tec-head "
+                            "me      me      photo               techno"
+                            "me      me      biobutton-1         biobutton-1"
+                            "me      me      biobutton-2      biobutton-2";
 
         
 
@@ -55,15 +66,24 @@
         border-radius: 10px; 
         box-shadow: .1rem 1rem 1rem rgba(0,0,0,.3);
 
+        @include respond(tab-land){
+            grid-template-areas:"header  header  header              header"
+                            "me-head me-head me-head             tec-head "
+                            "me      me      photo               techno"
+                            "me      me      biobutton-1         biobutton-1"
+                            "me      me      biobutton-2      biobutton-2";
+        }
+
         @include respond(phone-big){
+            margin: 0 5%;
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
-            "header    header    header     header"
-            "me-head  me-head me-head       me-head"
-            "me       me       me           me"
-            "photo    techno   techno techno"
-            "biobutton-1     techno   techno techno"
-            "biobutton-2 tec-head tec-head tec-head";
+            "header         header      header      header"
+            "me-head        me-head     me-head     me-head"
+            "me             me          me          me"
+            "photo          techno      techno      techno"
+            "biobutton-1    techno      techno techno"
+            "biobutton-2    tec-head    tec-head tec-head";
 
             
         }
@@ -71,7 +91,7 @@
     }
 
     &--item {
-        // align-self: stretch;
+        align-self: stretch;
             // justify-self: stretch;
             border-radius: 8px;
             color: white;
@@ -108,15 +128,17 @@
         
         &--text {
             padding: 3rem 2rem 1rem 2rem;
-            font-size: 3rem;
+            font-size: 3.2rem;
             letter-spacing: -1px;
 
             @include respond(tab-land){
-                font-size: 2.6rem;
+                font-size: 3.2rem;
                 letter-spacing: 0;
                 padding: 1.5rem 1rem .5rem 1rem;
-                font-size: 2.5rem;
 
+            }
+            @include respond(tab-port){
+                font-size: 3rem;
             }
             @include respond(phone-big){
                 font-size: 3.2rem;
@@ -140,17 +162,18 @@
         cursor: pointer;
         transition: all .3s;
         // overflow: hidden;
-        align-self: center;
+        align-self: start;
         // clip-path: circle(40% at 50% 40%);
-        background-color: transparent;
+        background-color: transparent !important;
         box-shadow: none;
+        
 
        
 
         &--photo {
-            // background-color: #fff;
+            background-color: #fff !important;
             width: 100%;
-            background-color: transparent;
+            // background-color: transparent;
             box-shadow: none;
 
 
@@ -186,6 +209,19 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        @include respond(tab-land){
+            &:focus,
+            &:active {
+                box-shadow: 0 0 1rem rgba(0,0,0,.5);
+                filter: grayscale(100%);    
+            }
+            &:focus,
+            &:active > &--glasses{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
         
     }
 
@@ -200,13 +236,12 @@
 
         &:link,
         &:visited {
-            
-            max-height: 5rem;
+            max-height: 6rem;
             width: 100%;
-            background-color: #87ceeb;
+            background-color: #4ab8e4 ;
             border-radius: 8px;
             font-size: 2.8rem;
-            line-height: 4rem;
+            line-height: 5rem;
             cursor: pointer;
             transition: all .1s;
             text-decoration: none;
@@ -215,16 +250,28 @@
 
             @include respond (phone-big){
                 height: 100%;
+                align-self: end;
             }
 
-            &:hover, &:focus {
+            
+
+            &:hover {
                 transform: translateY(-2px);
                 background-color: #93e0ff;
 
+                @include respond(tab-land){
+                    background-color: #4ab8e4 !important;
+                    transform: translateY(0);
+                }
             }
             &:active {
                 transform: translateY(3px);
                 box-shadow: .1rem .2rem .4rem rgba(0,0,0,.4);
+                background-color: #4ab8e4 !important;
+
+                @include respond(tab-land){
+                    transform: translateY(0);
+                }
 
             }
         }

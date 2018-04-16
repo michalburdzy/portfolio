@@ -33,6 +33,10 @@
     background-position: center top;
     background-repeat: no-repeat;
 
+    @include respond(phone-big){
+        // background-size: 110%;
+    }
+
     @media (min-resolution: 192dpi) and (max-width: 50em), (max-width: 100em) {
         background-image: url(./img/background_computer-1600.jpg);
     }

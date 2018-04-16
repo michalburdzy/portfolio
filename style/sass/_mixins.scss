@@ -1,4 +1,9 @@
 @mixin respond($size){
+    @if $size == desktop {
+        @media only screen and (min-width: 75em) // 1200px
+            {@content};
+    }
+
     @if $size == tab-land {
         @media only screen and (max-width: 75em) // 1200px
             {@content};
@@ -10,7 +15,7 @@
             {@content};
     };
     @if $size == phone-big {
-        @media only screen and (max-width: 37.375em)  // 600px
+        @media only screen and (max-width: 38.75em)  // 610px
             {@content};
     };
     @if $size == phone-small {

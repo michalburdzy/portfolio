@@ -48,7 +48,7 @@ var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerW
 window.addEventListener("scroll", function(){
     var positionY = window.pageYOffset;
     var position_projects = viewportWidth/1.65;  // Header's height = 48vw, so you need to scroll it to 1/1.65 to trigger event
-    var position_contact = viewportWidth/.65;
+    var position_contact = viewportWidth/.6;
 
     if(positionY > position_projects && !projectsSection.classList.contains('visible')) {
                     // projectsSection.addClass('visible');

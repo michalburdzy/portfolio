@@ -66,6 +66,10 @@
                 blink-caret .75s step-end infinite backwards;
             animation-delay: 2.5s;
 
+            @include respond(phone-small){
+                margin-top: 2rem;
+            }
+
         }
     }
 

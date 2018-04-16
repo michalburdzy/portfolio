@@ -1,9 +1,9 @@
 
 .navbar {
     grid-row: 1 / span 5;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     border-radius: 10px;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.5);
     margin-top: -2rem;
     margin-left: 2rem;
     opacity: 0;
@@ -18,8 +18,14 @@
     transition: all .7s .1s cubic-bezier(.31,-0.27,.46,1);
     transform-origin: top left;
     transform: translateY(-101%) scaleY(.5);
-   
+
     @include respond(tab-land){
+        grid-column: 1 / span 3;
+        background-color: rgba(0,0,0,.7);
+       
+        }
+   
+    @include respond(tab-port){
         grid-column: 1 / span 3;
         transform: translateY(0) scaleY(1);
         opacity: 1;
@@ -29,12 +35,17 @@
         padding-top: 10rem;
         grid-row-gap: 2rem;
         }
+
+        @include respond(tab-port){
+            grid-column: 1 / span 4;
+        }
+        
     @include respond(phone-small){
         // grid-column: 1 / span 4;
         grid-auto-flow: column;
         grid-auto-columns: minmax(max-content, 1fr);
         grid-column: 1/ span 8;
-        padding: 2rem .8rem .1rem 14rem;
+        padding: 2rem .3rem .1rem 5rem;
         // padding-left: 14rem;
         margin-left: 0;
         transform: translateY(0) scaleY(1);
@@ -94,6 +105,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @include respond(tab-land){
+                color: #fff;               
+            }
+
+            @include respond(phone-big){
+                font-size: 1rem !important;
+            }
     
         }
 
@@ -152,6 +171,9 @@
 
         @include respond(tab-port){
             font-size: 4rem;
+        }
+        @include respond(phone-big){
+            padding-right: .2rem;
         }
         @include respond(phone-small){
             font-size: 3.5rem;

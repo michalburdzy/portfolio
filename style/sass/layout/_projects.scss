@@ -12,7 +12,11 @@
     @include respond(tab-port){
       grid-gap: 5px;
       margin-bottom: 5rem;
+      grid-template-columns: .2fr repeat(8, 1fr) .2fr;
+    }
 
+    @include respond(phone-big){
+      grid-template-columns: .1fr repeat(8, 1fr) .1fr;
     }
 
     @include respond(phone-smaller){
@@ -101,9 +105,9 @@
         
         &--header, 
         &--footer {
-          // @include bugFix;
-          margin-right: -3px;
-          padding: 1rem .5rem;
+          @include bugFix;
+          margin-right: -2px;
+          padding: .4rem;          
           // font-weight: 500;
           background-color: rgba(#444444, .8);
           position: absolute;
@@ -111,10 +115,9 @@
           transition: all .5s;
           right: 0;
           width: 102%;
-          // padding: 0;
-          // z-index: 15;
-        //   height: 0;
-          // overflow: hidden;
+
+          // @include respond(phone-big){
+          //   padding: .4rem;          }
 
 
         }
@@ -211,7 +214,18 @@
           animation-delay: .3s;
 
           &-background {
-            background-image: url('./img/WeatherMachine.jpg');
+            background-image: url('./img/WeatherMachine-600.jpg');
+
+            @media (min-width: 100em) {
+              background-image: url(./img/WeatherMachine.jpg);
+            }
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url(./img/WeatherMachine-500.jpg);
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url(./img/WeatherMachine-350.jpg);
+            }
           }
           
         }
@@ -222,14 +236,23 @@
 
           &-background {          
             background-image: url('./img/WikipediaViewer.jpg');
+
+            
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url(WikipediaViewer-700.jpg);
+            }
           }
         }
         &--5{
           grid-column: 9 / span 1;
           grid-row: 5 / span 2;
-          background-image: url('./img/Kalkulator.jpg');
+          // background-image: url('./img/Kalkulator-300.jpg');
           animation-delay: .5s;
           &-background {          
+            background-image: url('./img/Kalkulator-300.jpg');
+          }
+
+          @media (min-width: 100em) {
             background-image: url('./img/Kalkulator.jpg');
           }
 
@@ -256,7 +279,18 @@
           animation-delay: .7s;
 
           &-background {          
-            background-image: url('./img/TwitchStream.jpg');
+            background-image: url('./img/TwitchStream-1300.jpg');
+
+            @media (min-width: 100em) {
+              background-image: url('./img/TwitchStream-1300.jpg');
+            }
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url('./img/TwitchStream-1000.jpg');
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 56.25em) {
+              background-image: url('./img/TwitchStream-700.jpg');
+            }
           }
           
         };
@@ -268,11 +302,15 @@
 
 
           &-background {          
-            background-image: url('./img/Notepad.jpg');
+            background-image: url('./img/Notepad-300.jpg');
             background-size: 250%;
             background-position: center;
           background-color: transparent;
           background-repeat: no-repeat;
+
+          @media (min-width: 100em) {
+            background-image: url('./img/Notepad.jpg');
+          }
           }
         }
         &--9 {
@@ -282,6 +320,10 @@
 
           &-background {          
             background-image: url('./img/TicTacToe.jpg');
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url('./img/TicTacToe-600.jpg');
+            }
           }
         }
         &--10{
@@ -290,7 +332,18 @@
           animation-delay: 1s;
 
           &-background {          
-            background-image: url('./img/portfolio.jpg');
+            background-image: url('./img/portfolio-1400.jpg');
+
+            @media (min-width: 100em) {
+              background-image: url('./img/portfolio.jpg');
+            }
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url('./img/portfolio-1000.jpg');
+            }
+            @media (min-resolution: 192dpi) and (max-width: 28.125em), (max-width: 50em) {
+              background-image: url('./img/TwitchStream-800.jpg');
+            }
           }
         }
         &--11{
@@ -300,6 +353,10 @@
 
           &-background {          
             background-image: url('./img/SimonGame.jpg');
+
+            @media (min-resolution: 192dpi) and (max-width: 37.5em), (max-width: 75em) {
+              background-image: url('./img/SimonGame-500.jpg');
+            }
           }
         }
         &--12 {

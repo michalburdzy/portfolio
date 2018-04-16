@@ -20,6 +20,11 @@
     box-sizing: border-box;
 
     // @include bugFix;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 
 
 }
@@ -37,10 +42,10 @@ html {
         font-size: 32%; // 5px
     };
     @include respond(phone-small){
-        font-size: 25%;
+        font-size: 28.125%;
     }
     @include respond(phone-smaller){
-        font-size: 18.75%;
+        font-size: 25%;
     }
     
 }
@@ -49,11 +54,16 @@ body {
     font-family:  'PT Sans Caption', sans-serif;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+
+
+
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
       -moz-user-select: none; /* Firefox */
        -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none;
         box-sizing: border-box;
+
+    max-width: 100vw !important;
 }
 
