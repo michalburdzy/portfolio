@@ -47,21 +47,25 @@ var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerW
 
 window.addEventListener("scroll", function(){
     var positionY = window.pageYOffset;
-    var position_projects = viewportWidth/1.65;  // Header's height = 48vw, so you need to scroll it to 1/1.65 to trigger event
-    var position_contact = viewportWidth/.6;
+    var position_projects = viewportWidth/1.20;  // Header's height = 48vw, so you need to scroll it to 1/1.65 to trigger event
+    var position_contact = viewportWidth/.47;
 
     if(positionY > position_projects && !projectsSection.classList.contains('visible')) {
                     // projectsSection.addClass('visible');
                     // allProjects.addClass('animation-appear')
+                    // console.log('go Projects!')
             projectsSection.classList.add('visible');
             for (var i = 0; i < allProjects.length; i++) {
                 allProjects[i].classList.add('animation-appear');
-                console.log('added class to gallery item!')
+                // console.log('added class to gallery item!')
             }
-    } else if (positionY > position_contact && !contactForm.classList.contains('visible')){
+    } 
+     if (positionY > position_contact && !contactForm.classList.contains('animation-appear')){
         
     contactForm.classList.add('animation-appear');
             // contactForm.addClass('animation-appear');
+                                console.log('go Contact!')
+
     }
 })
 

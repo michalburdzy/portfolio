@@ -172,6 +172,12 @@
             filter: blur(1px);
           }
 
+        &--title {
+          border: none;
+          // margin-top: 1%;
+          font-size: 3.5rem;
+        }
+
         grid-template-columns: repeat(9, 1fr);
         &--1 {
           grid-column: 2 / span 3;
@@ -361,14 +367,55 @@
         }
         &--12 {
           grid-column: 2 / span 8;
-          grid-row: 16 / span 2;
+          grid-row: 16 / span 1;
+          background-color: #aaa !important;
+
+
+          &-title {          
+            // background-image: radial-gradient(rgb(230, 255, 192), #ddd);
+          }
+        }
+
+
+        &--13 {
+          grid-column: 2 / span 2;
+          grid-row: 17 / span 6;
 
           &-background {          
-            background-image: radial-gradient(rgb(230, 255, 192), #ddd);
+            background-image: url('./img/FakeDataSearch.JPEG');
+            background-position: top;
           }
-        
+        }
+
+        &--14 {
+          grid-column: 4 / span 4;
+          grid-row: 17 / span 3;
+
+          &-background {          
+            background-image: url('./img/ColorBoxes.JPEG');
+            background-position: top;
+          }
         }
         
+        &--15 {
+          grid-column: 8 / span 2;
+          grid-row: 18 / span 5;
+
+          &-background {          
+            background-image: url('./img/PokemonCards2.JPEG');
+            background-position: top;
+          }
+        }
+
+        &--16 {
+          grid-column: 4 / span 4;
+          grid-row: 20 / span 7;
+
+          &-background {          
+            background-image: url('./img/FlagGame.JPEG');
+            background-position: top;
+          }
+        }
         
         &:hover {
           // @include bugFix;
