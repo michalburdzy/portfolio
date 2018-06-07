@@ -1,8 +1,3 @@
-
-
-
-
-
 // var allProjects = $('.projects__gallery');
 // var projectsSection = $('.projects');
 // var contactForm = $('.form');
@@ -16,7 +11,8 @@ window.onload = function(){
             e.preventDefault();
     
             document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+                block: 'start',
+                behavior: 'smooth',
             });
         });
     });
@@ -38,7 +34,7 @@ contactSection.addEventListener("click", function(){
 projectsSection.addEventListener("click", function(){
     for (var i = 0; i < allProjects.length; i++) {
         allProjects[i].classList.add('animation-appear');
-        console.log('added class to gallery item!')
+        // console.log('added class to gallery item!')
     }
 })
 
@@ -47,9 +43,8 @@ var viewportWidth = Math.max(document.documentElement.clientWidth, window.innerW
 
 window.addEventListener("scroll", function(){
     var positionY = window.pageYOffset;
-    var position_projects = viewportWidth/1.20;  // Header's height = 48vw, so you need to scroll it to 1/1.65 to trigger event
+    var position_projects = viewportWidth/1.2;  // Header's height = 48vw, so you need to scroll it to 1/1.65 to trigger event
     var position_contact = viewportWidth/.47;
-
     if(positionY > position_projects && !projectsSection.classList.contains('visible')) {
                     // projectsSection.addClass('visible');
                     // allProjects.addClass('animation-appear')
