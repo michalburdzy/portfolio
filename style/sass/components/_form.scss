@@ -121,11 +121,12 @@
             transition: all .1s;                
             outline: none;
 
-
-            &:active {
+            
+            &:active:not([disabled]) {
                 transform: translateY(2px);
+                user-select: none;
             }
-            &:hover {
+            &:hover:not([disabled]) {
                 background-color: #7dd3f5;
             }
             

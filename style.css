@@ -741,9 +741,10 @@
       letter-spacing: 1px;
       transition: all .1s;
       outline: none; }
-      .form__input--submit:active {
-        transform: translateY(2px); }
-      .form__input--submit:hover {
+      .form__input--submit:active:not([disabled]) {
+        transform: translateY(2px);
+        user-select: none; }
+      .form__input--submit:hover:not([disabled]) {
         background-color: #7dd3f5; }
     .form__input:placeholder-shown + .form__input--label {
       transform: translateY(-5rem);
@@ -960,7 +961,8 @@
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none; }
+  user-drag: none;
+  user-select: none; }
 
 html {
   font-size: 62.5%; }

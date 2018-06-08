@@ -260,14 +260,13 @@
         <div class="projects__gallery--header ">Simon Game</div>
         <div class="projects__gallery--footer ">Try to repeat the pattern</div>
       </a>
-      <a href="#" target="_blank"  class="projects__gallery projects__gallery--12">
+      <a href="#react"  id='react' target="_blank"  class="projects__gallery projects__gallery--12">
           <h1 class="projects__gallery--title">
             React Projects
           </h1>
         <!-- <div class="projects__gallery--header ">React apps</div> -->
         <!-- <div class="projects__gallery--footer ">Coming soon!!!</div> -->
       </a>
-
 
 
       <a href="https://codepen.io/mmicalt/full/VxqNKx/" target="_blank"  class="projects__gallery projects__gallery--13">
@@ -295,7 +294,47 @@
     <section class="contact" id="contact">
       <h2 class="contact__header">Contact Me!</h2>
       <div class="contact__form form__container">
-        <form class="form" action="https://formspree.io/mmicalt@gmail.com"
+
+
+          <form class="form" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/1KEMJRSySMo3W09TClAkTBiV1ucbEF5Mt8mePfyzFxqQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;" pattern=".+">
+          <div class="form__group form__group--message">
+            <label for="entry.587717421" class="form__input--label">
+                &nbsp;
+                <span class="icon-box">
+                  <svg class="icon icon-dark">
+                    <use xlink:href="img/icons/sprite.svg#icon-envelop"></use>
+                  </svg>
+                </span>
+                &nbsp;Your message&nbsp;<span id='messageContent'></span></label>
+            <textarea class="form__input form__input--message" name="entry.587717421" id="entry.587717421" cols="40" rows="4"></textarea>
+          </div>
+          <div class="form__group  form__group--name">
+            <input id="entry.806161755" class="form__input form__input--name" type="text" name="entry.806161755" placeholder="name">
+            <label for="entry.806161755" class="form__input--label">name</label>
+          </div>
+          <div class="form__group form__group--email">
+            <input required id="entry.904979121" class="form__input form__input--email" type="email" name="entry.904979121" placeholder="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+            <label for="entry.904979121" class="form__input--label">email</label>
+          </div>
+          <button id='form-button' class="form__input form__input--submit" type="submit">
+              &nbsp;
+              <span class="icon-box">
+                <svg class="icon">
+                  <use xlink:href="img/icons/sprite.svg#icon-paper-plane"></use>
+                </svg>
+              </span>
+              &nbsp;
+              <span id='form-button--text'>Send message</span>
+          </button>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" ></iframe>
+      </form>
+
+
+
+
+
+
+        <!-- <form class="form" action="https://formspree.io/mmicalt@gmail.com"
             method="POST">
             <div class="form__group form__group--message">
               <label for="message" class="form__input--label">
@@ -325,7 +364,7 @@
                 </span>
                 &nbsp;Send message
             </button>
-        </form>
+        </form> -->
       </div>
       
     </section>
