@@ -1,9 +1,22 @@
-// var allProjects = $('.projects__gallery');
-// var projectsSection = $('.projects');
-// var contactForm = $('.form');
-
 window.onload = function(){
-    console.log('window loaded!')
+    // console.log('window loaded!')
+
+
+    
+    var allProjects = document.querySelectorAll('.projects__gallery');
+    var projectsSection = document.querySelector('.projects');
+    var contactForm = document.querySelector('.form');
+    var contactSection = document.querySelector('.contact');
+
+    var form = document.getElementById('gform');
+    var formButton = document.getElementById('form-button');
+    var formButtonText = document.getElementById('form-button--text');
+    var messageContent = this.document.getElementById('messageContent')
+    var inputTextArea = document.getElementById('entry.587717421')
+    var inputNameArea = document.getElementById('entry.806161755')
+    var inputEmailArea = document.getElementById('entry.904979121');
+    var inputs = [inputEmailArea, inputNameArea, inputTextArea];
+
 
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -18,23 +31,11 @@ window.onload = function(){
     });
 
 
+    // Adding delay to projects gallery
+    for (var i = 0; i < allProjects.length; i++) {
+        allProjects[i].style = `animation-delay: ${i/5}s`;
+    }
 
-
-    // console.log('js ok')
-
-    var allProjects = document.querySelectorAll('.projects__gallery');
-    var projectsSection = document.querySelector('.projects');
-    var contactForm = document.querySelector('.form');
-    var contactSection = document.querySelector('.contact');
-
-    var form = document.getElementById('gform');
-    var formButton = document.getElementById('form-button');
-    var formButtonText = document.getElementById('form-button--text');
-    var messageContent = this.document.getElementById('messageContent')
-    var inputTextArea = document.getElementById('entry.587717421')
-    var inputNameArea = document.getElementById('entry.806161755')
-    var inputEmailArea = document.getElementById('entry.904979121');
-    var inputs = [inputEmailArea, inputNameArea, inputTextArea];
 
     form.addEventListener("submit", function(e){
         // if(!isValid){

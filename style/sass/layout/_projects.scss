@@ -182,7 +182,7 @@
         &--1 {
           grid-column: 2 / span 3;
           grid-row: 2 / span 5;
-          animation-delay: .1s;
+          // animation-delay: .1s;
           background-color: transparent;
 
           &-background {
@@ -201,7 +201,7 @@
         &--2 {
           grid-column: 5/ span 3;
           grid-row: 2 / span 3;
-          animation-delay: .2s;
+          // animation-delay: .2s;
 
           &-background {
             background-image: url(./img/RQM-900.jpg);
@@ -217,7 +217,7 @@
         &--3 {
           grid-column: 8/ span 2;
           grid-row: 2 / span 3;
-          animation-delay: .3s;
+          // animation-delay: .3s;
 
           &-background {
             background-image: url('./img/WeatherMachine-600.jpg');
@@ -238,7 +238,7 @@
         &--4 {
           grid-column: 5 / span 4;
           grid-row:  5 / span 3;
-          animation-delay: .4s;
+          // animation-delay: .4s;
 
           &-background {          
             background-image: url('./img/WikipediaViewer.jpg');
@@ -253,7 +253,7 @@
           grid-column: 9 / span 1;
           grid-row: 5 / span 2;
           // background-image: url('./img/Kalkulator-300.jpg');
-          animation-delay: .5s;
+          // animation-delay: .5s;
           &-background {          
             background-image: url('./img/Kalkulator-300.jpg');
           }
@@ -266,7 +266,7 @@
         &--6{
           grid-column: 2 / span 3;
           grid-row: 7 / span 5;
-          animation-delay: .6s;
+          // animation-delay: .6s;
 
           &-background {          
             background-image: url('./img/PomodoroClock-900.jpg');
@@ -282,7 +282,7 @@
         &--7{
           grid-column: 5 / span 4;
           grid-row: 8 / span 4;
-          animation-delay: .7s;
+          // animation-delay: .7s;
 
           &-background {          
             background-image: url('./img/TwitchStream-1300.jpg');
@@ -303,8 +303,9 @@
         &--8{
           grid-column: 9 / span 1;
           grid-row: 7 / span 5;
-          animation-delay: .8s;
+          // animation-delay: .8s;
           background-color: transparent;
+          // min-height: 300px;
 
 
           &-background {          
@@ -322,7 +323,7 @@
         &--9 {
           grid-column: 2 / span 2;
           grid-row: 12 / span 4;
-          animation-delay: .9s;
+          // animation-delay: .9s;
 
           &-background {          
             background-image: url('./img/TicTacToe.jpg');
@@ -335,7 +336,7 @@
         &--10{
           grid-column: 4 / span 4;
           grid-row: 12 / span 4;
-          animation-delay: 1s;
+          // animation-delay: 1s;
 
           &-background {          
             background-image: url('./img/portfolio-1400.jpg');
@@ -355,7 +356,7 @@
         &--11{
           grid-column: 8 / span 2;
           grid-row: 12 / span 4;
-          animation-delay: 1.1s;
+          // animation-delay: 1.1s;
 
           &-background {          
             background-image: url('./img/SimonGame.jpg');
@@ -378,8 +379,8 @@
 
 
         &--13 {
-          grid-column: 2 / span 2;
-          grid-row: 17 / span 6;
+          grid-column: 5 / span 2;
+          grid-row: 17 / span 7;
 
           &-background {          
             background-image: url('./img/FakeDataSearch.JPEG');
@@ -388,8 +389,8 @@
         }
 
         &--14 {
-          grid-column: 4 / span 4;
-          grid-row: 17 / span 3;
+          grid-column: 7 / span 3;
+          grid-row: 22 / span 2;
 
           &-background {          
             background-image: url('./img/ColorBoxes.JPEG');
@@ -398,7 +399,7 @@
         }
         
         &--15 {
-          grid-column: 8 / span 2;
+          grid-column: 7 / span 3;
           grid-row: 17 / span 5;
 
           &-background {          
@@ -408,11 +409,29 @@
         }
 
         &--16 {
-          grid-column: 4 / span 4;
-          grid-row: 20 / span 7;
+          grid-column: 2 / span 3;
+          grid-row: 17 / span 7;
 
           &-background {          
             background-image: url('./img/FlagGame.JPEG');
+            background-position: top;
+          }
+        }
+
+        &--17 {
+          grid-column: 2 / -2;
+          grid-row: 24 / span 1;
+          background-color: #aaa !important;
+
+        }
+
+        &--18 {
+          grid-column: 2 / span 4;
+          grid-row: 25 / span 5;
+          min-height: 350px;
+
+          &-background {          
+            background-image: url('./img/bitAnimals.JPEG');
             background-position: top;
           }
         }
