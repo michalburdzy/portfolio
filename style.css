@@ -23,9 +23,8 @@
       padding-bottom: 9rem; } }
   .bio__container {
     display: grid;
-    grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me       photo         biobutton-1" "me      me         photo      biobutton-2";
-    grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2";
-    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: "header  header  header    header" "me-head me-head me-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2";
+    grid-template-rows: repeat(3, max-content) 6rem 6rem;
     grid-template-columns: 1fr 1fr minmax(min-content, 0.6fr) 1fr;
     grid-gap: .4rem;
     background-color: #ececf3;
@@ -34,18 +33,19 @@
     color: #fff;
     overflow: hidden;
     padding: .8rem;
-    margin: 0 10%;
+    margin: 0 20%;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0.1rem 1rem 1rem rgba(0, 0, 0, 0.3); }
     @media only screen and (max-width: 75em) {
       .bio__container {
-        grid-template-areas: "header  header  header              header" "me-head me-head me-head             tec-head " "me      me      photo               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2"; } }
+        margin: 0 10%;
+        grid-template-areas: "header  header  header              header" "me-head me-head tec-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2"; } }
     @media only screen and (max-width: 38.75em) {
       .bio__container {
         margin: 0 5%;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "header         header      header      header" "me-head        me-head     me-head     me-head" "me             me          me          me" "photo          techno      techno      techno" "biobutton-1    techno      techno techno" "biobutton-2    tec-head    tec-head tec-head"; } }
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header         header      " "me-head        me-head     " "me             me          " "techno          techno      " "techno          techno     " "techno          techno     " "biobutton-2    biobutton-1 "; } }
   .bio--item {
     align-self: stretch;
     border-radius: 8px;
@@ -72,12 +72,13 @@
   .bio__about {
     grid-area: me; }
     .bio__about--text {
+      text-align: left;
       padding: 3rem 2rem 1rem 2rem;
-      font-size: 3.2rem;
-      letter-spacing: -1px; }
+      font-size: 2.8rem;
+      line-height: 3.2rem; }
       @media only screen and (max-width: 75em) {
         .bio__about--text {
-          font-size: 3.2rem;
+          line-height: 3.2rem;
           letter-spacing: 0;
           padding: 1.5rem 1rem .5rem 1rem; } }
       @media only screen and (max-width: 56em) {
@@ -88,43 +89,32 @@
           font-size: 3.2rem; } }
     .bio__about--header {
       grid-area: me-head;
-      font-size: 3.8rem;
+      font-size: 3.2rem;
       margin-bottom: 5px; }
   .bio__photo {
+    -webkit-shape-outside: ellipse();
     position: relative;
-    grid-area: photo;
+    display: inline-block;
     filter: sepia(20%);
-    border-radius: 8px;
-    cursor: pointer;
     transition: all .3s;
+    overflow: hidden;
     align-self: start;
     background-color: transparent !important;
     box-shadow: none; }
     .bio__photo--photo {
-      background-color: #fff !important;
-      width: 100%;
+      -webkit-shape-outside: ellipse();
+      border: 10px solid transparent;
+      float: left;
+      clip-path: ellipse(50% 50% at 50% 50%);
+      max-height: 200px;
+      cursor: pointer;
       box-shadow: none; }
       @media only screen and (max-width: 38.75em) {
         .bio__photo--photo {
-          max-width: 16em; } }
+          max-width: 10em; } }
       @media only screen and (max-width: 22.5em) {
         .bio__photo--photo {
-          max-width: 12em; } }
-    .bio__photo--glasses {
-      position: absolute;
-      top: 27%;
-      left: 14%;
-      width: 70%;
-      grid-area: photo;
-      opacity: 0;
-      transition: all .3s;
-      transform: translateY(-200%); }
-    .bio__photo:active {
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-      filter: grayscale(100%); }
-    .bio__photo:active > .bio__photo--glasses {
-      transform: translateY(0);
-      opacity: 1; }
+          max-width: 8em; } }
     @media only screen and (max-width: 75em) {
       .bio__photo:focus, .bio__photo:active {
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
@@ -171,20 +161,20 @@
     display: flex;
     flex-wrap: wrap;
     align-content: space-evenly;
+    align-content: stretch;
     justify-content: space-evenly; }
     .bio__technologies--header {
       grid-area: tec-head;
-      font-size: 3.8rem;
+      font-size: 3.2rem;
       align-self: stretch;
       justify-self: stretch;
       margin-bottom: 5px;
       background-color: #87ceeb;
-      color: white; }
+      color: white;
+      overflow: hidden; }
       @media only screen and (max-width: 38.75em) {
         .bio__technologies--header {
-          align-self: start;
-          margin-bottom: 0;
-          height: 100%; } }
+          display: none; } }
     .bio__technologies--icon-box {
       width: 6rem;
       height: 6rem;
@@ -192,10 +182,14 @@
       border-radius: 5px;
       box-shadow: 0.3rem 0.5rem 0.2rem rgba(0, 0, 0, 0.3);
       margin: .5rem; }
+      @media only screen and (max-width: 75em) {
+        .bio__technologies--icon-box {
+          width: 7rem;
+          height: 7rem; } }
       @media only screen and (max-width: 38.75em) {
         .bio__technologies--icon-box {
-          width: 10rem;
-          height: 10rem; } }
+          width: 9rem;
+          height: 9rem; } }
       @media only screen and (max-width: 31.25em) {
         .bio__technologies--icon-box {
           width: 8rem;
@@ -289,7 +283,7 @@
         background-image: url(./img/background_computer-600.jpg); } }
 
 .projects {
-  margin-bottom: 12rem;
+  margin-bottom: 20rem;
   grid-column: 1 / span 10;
   max-width: 100%;
   display: grid;
@@ -298,10 +292,13 @@
   grid-auto-rows: minmax(1vw, 3vw);
   grid-gap: 15px;
   transition: all .3s; }
+  @media only screen and (max-width: 75em) {
+    .projects {
+      margin-bottom: 30rem; } }
   @media only screen and (max-width: 56em) {
     .projects {
       grid-gap: 5px;
-      margin-bottom: 5rem;
+      margin-bottom: 49rem;
       grid-template-columns: 0.2fr repeat(8, 1fr) 0.2fr; } }
   @media only screen and (max-width: 38.75em) {
     .projects {
@@ -309,7 +306,7 @@
   @media only screen and (max-width: 22.5em) {
     .projects {
       grid-template-rows: 10rem;
-      margin-bottom: 2rem; } }
+      margin-bottom: 55rem; } }
   .projects__header {
     grid-row: 1 / span 1;
     grid-column: 1 / span 10;
@@ -546,11 +543,11 @@
       background-color: #aaa !important; }
     .projects__gallery--18 {
       grid-column: 2 / span 4;
-      grid-row: 25 / span 5;
-      min-height: 350px; }
+      grid-row: 25 / span 5; }
       .projects__gallery--18-background {
         background-image: url("./img/bitAnimals.JPEG");
-        background-position: top; }
+        background-position: top;
+        background-size: cover; }
     .projects__gallery:hover {
       transform: translateY(-7px);
       box-shadow: 3px 5px 8px rgba(1, 1, 1, 0.6); }
@@ -629,7 +626,7 @@
     transform-origin: center;
     transition: transform .2s;
     animation: moveInButton .6s backwards;
-    animation-delay: 3.5s;
+    animation-delay: 4s;
     text-decoration: none;
     box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
     background-color: #444; }
@@ -934,7 +931,7 @@
     border-right: .15em solid #eee;
     white-space: nowrap;
     letter-spacing: .1em;
-    animation: typing 1s 1s backwards steps(15, end), blink-caret 0.55s step-start 5 forwards; }
+    animation: typing 1s 2s backwards steps(15, end), blink-caret 0.55s step-start 5 forwards; }
     .screen__text--small {
       position: relative;
       letter-spacing: .1em;
@@ -945,8 +942,8 @@
       overflow: hidden;
       border-right: .15em solid transparent;
       white-space: nowrap;
-      animation: typing 1s 1s backwards steps(15, end), blink-caret 0.75s step-end infinite backwards;
-      animation-delay: 2.5s; }
+      animation: typing 1s backwards steps(15, end), blink-caret 0.75s step-end infinite backwards;
+      animation-delay: 3.5s; }
       @media only screen and (max-width: 31.25em) {
         .screen__text--small {
           margin-top: 2rem; } }

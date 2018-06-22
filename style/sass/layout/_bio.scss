@@ -2,6 +2,7 @@
 
     z-index: 30;
     grid-column: 1 / -1;
+
         justify-self: stretch;
         justify-items: center;
         background-image: linear-gradient(transparent 0, rgb(244, 255, 229) 5%, rgb(222, 255, 184) 100%);
@@ -32,21 +33,21 @@
 
     &__container {
         display: grid;
-        grid-template-areas:"header  header  header              header"
-                            "me-head me-head me-head             tec-head "
-                            "me      me      photo               techno"
-                            "me      me       photo         biobutton-1"
-                            "me      me         photo      biobutton-2";
+        // grid-template-areas:"header  header  header              header"
+        //                     "me-head me-head me-head             tec-head "
+        //                     "me      me      photo               techno"
+        //                     "me      me       photo         biobutton-1"
+        //                     "me      me         photo      biobutton-2";
 
-                            grid-template-areas:"header  header  header              header"
+        grid-template-areas:"header  header  header    header"
                             "me-head me-head me-head             tec-head "
-                            "me      me      photo               techno"
+                            "me      me      techno               techno"
                             "me      me      biobutton-1         biobutton-1"
                             "me      me      biobutton-2      biobutton-2";
 
         
 
-        grid-template-rows: repeat(5, max-content);
+        grid-template-rows: repeat(3, max-content)  6rem 6rem;
         // grid-template-columns: repeat(4, minmax);
         grid-template-columns: 1fr 1fr minmax(min-content, .6fr) 1fr;
         // justify-items: center;
@@ -60,30 +61,34 @@
         color: #fff;
         overflow: hidden;
         padding: .8rem;
-        margin: 0 10%;
+        margin: 0 20%;
 
         text-align: center;
         border-radius: 10px; 
         box-shadow: .1rem 1rem 1rem rgba(0,0,0,.3);
 
+        
         @include respond(tab-land){
-            grid-template-areas:"header  header  header              header"
-                            "me-head me-head me-head             tec-head "
-                            "me      me      photo               techno"
-                            "me      me      biobutton-1         biobutton-1"
-                            "me      me      biobutton-2      biobutton-2";
+            margin: 0 10%;
+            grid-template-areas:
+            "header  header  header              header"
+            "me-head me-head tec-head             tec-head "
+            "me      me      techno               techno"
+            "me      me      biobutton-1         biobutton-1"
+            "me      me      biobutton-2      biobutton-2";
         }
 
         @include respond(phone-big){
             margin: 0 5%;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
-            "header         header      header      header"
-            "me-head        me-head     me-head     me-head"
-            "me             me          me          me"
-            "photo          techno      techno      techno"
-            "biobutton-1    techno      techno techno"
-            "biobutton-2    tec-head    tec-head tec-head";
+            "header         header      "
+            "me-head        me-head     "
+            "me             me          "
+            "techno          techno      "
+            "techno          techno     "
+            "techno          techno     "
+            "biobutton-2    biobutton-1 ";
 
             
         }
@@ -127,12 +132,17 @@
         grid-area: me;
         
         &--text {
+            text-align: left;
             padding: 3rem 2rem 1rem 2rem;
-            font-size: 3.2rem;
-            letter-spacing: -1px;
+            font-size: 2.8rem;
+            line-height: 3.2rem;
+
+            // letter-spacing: -1px;
+
 
             @include respond(tab-land){
-                font-size: 3.2rem;
+                // font-size: 3.2rem;
+                line-height: 3.2rem;
                 letter-spacing: 0;
                 padding: 1.5rem 1rem .5rem 1rem;
 
@@ -147,68 +157,93 @@
 
         &--header {
             grid-area: me-head;
-            font-size: 3.8rem;
+            font-size: 3.2rem;
             margin-bottom: 5px ;
             
         }
     }
     &__photo {
-
+        -webkit-shape-outside: ellipse();
         position: relative;
-        grid-area: photo;
-        // height: 80%;
+        
+        //testing
+        // grid-area: photo;
+        display: inline-block;
+
         filter: sepia(20%);
-        border-radius: 8px;
-        cursor: pointer;
+        // border-radius: 8px;
         transition: all .3s;
-        // overflow: hidden;
+        overflow: hidden;
         align-self: start;
         // clip-path: circle(40% at 50% 40%);
+
+
         background-color: transparent !important;
         box-shadow: none;
-        
 
-       
+        //testing
+        // flex-grow: 2;
+
 
         &--photo {
-            background-color: #fff !important;
-            width: 100%;
+            -webkit-shape-outside: ellipse();
+            border: 10px solid transparent;
+            float: left;
+            clip-path: ellipse(50% 50% at 50% 50%);
+ 
+            max-height: 200px;
+            cursor: pointer;
+
+
+
+
+
+            // background-color: #fff !important;
+            // width: 100%;
             // background-color: transparent;
             box-shadow: none;
 
 
             @include respond(phone-big){
-                max-width: 16em;
+                max-width: 10em;
 
             }
             @include respond(phone-smaller){
-                max-width: 12em;            
+                max-width: 8em;            
             }
 
-            &--photo {}
+            // &:active {
+            //     box-shadow: 0 0 1rem rgba(0,0,0,.5);
+            //     filter: grayscale(100%);    
+            // }
+            // &:active ~ .bio__photo--glasses{
+            //     transform: translateY(120%);
+            //     opacity: 1;
+            // }
+
         }
         
        
-        &--glasses {
-            position: absolute;
-            top: 27%;
-            left: 14%;
-            width: 70%;
-            grid-area: photo;
-            opacity: 0;
-            transition: all .3s;
-            transform: translateY(-200%);
-        }
+        // &--glasses {
+        //     position: absolute;
+        //     top: -20px;
+        //     left: 14%;
+        //     width: 70%;
+        //     grid-area: photo;
+        //     opacity: 0;
+        //     transition: all .3s;
+        //     transform: translateY(-100%);
+        // }
 
         
-        &:active {
-            box-shadow: 0 0 1rem rgba(0,0,0,.5);
-            filter: grayscale(100%);    
-        }
-        &:active > &--glasses{
-            transform: translateY(0);
-            opacity: 1;
-        }
+        // &:active {
+        //     box-shadow: 0 0 1rem rgba(0,0,0,.5);
+        //     filter: grayscale(100%);    
+        // }
+        // &:active > &--glasses{
+        //     transform: translateY(0);
+        //     opacity: 1;
+        // }
 
         @include respond(tab-land){
             &:focus,
@@ -278,6 +313,7 @@
         
     }
     &__technologies {
+
         grid-area: techno;
 
         // display: grid;
@@ -289,29 +325,35 @@
         display: flex;
         flex-wrap: wrap;
         align-content: space-evenly;
+        align-content: stretch;
         justify-content: space-evenly;
 
         
 
         &--header {
             grid-area: tec-head;
-            font-size: 3.8rem;
+            font-size: 3.2rem;
             align-self: stretch;
             justify-self: stretch;
             // border-bottom: 1px solid #ddd;
             margin-bottom: 5px ;
             background-color: #87ceeb;
             color: white;
+            overflow: hidden;
 
             @include respond(phone-big){
-                align-self: start;
-                margin-bottom: 0;
-                height: 100%;
+                // align-self: start;
+                // margin-bottom: 0;
+                // height: 100%;
+                display: none;
             }
 
         }
 
         &--icon-box {
+            //testing
+            // flex-grow: 1;
+
 
             width: 6rem;
             height: 6rem;
@@ -324,9 +366,14 @@
             margin: .5rem;
             // position: relative;
 
+            @include respond(tab-land){
+                width: 7rem;
+                height: 7rem;
+            }
+
             @include respond(phone-big){
-                width: 10rem;
-                height: 10rem;
+                width: 9rem;
+                height: 9rem;
             }
             @include respond(phone-small){
                 width: 8rem;

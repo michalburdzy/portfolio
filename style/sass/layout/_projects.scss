@@ -1,5 +1,5 @@
 .projects {
-    margin-bottom: 12rem;
+    margin-bottom: 20rem;
     grid-column: 1 / span 10;
     max-width: 100%;
     display: grid;
@@ -9,9 +9,12 @@
     grid-gap: 15px;
     transition: all .3s;
 
+    @include respond(tab-land){
+      margin-bottom: 30rem;
+    }
     @include respond(tab-port){
       grid-gap: 5px;
-      margin-bottom: 5rem;
+      margin-bottom: 49rem;
       grid-template-columns: .2fr repeat(8, 1fr) .2fr;
     }
 
@@ -21,7 +24,7 @@
 
     @include respond(phone-smaller){
       grid-template-rows: 10rem;
-      margin-bottom: 2rem; 
+      margin-bottom: 55rem; 
     }
 
     &__header {
@@ -428,11 +431,12 @@
         &--18 {
           grid-column: 2 / span 4;
           grid-row: 25 / span 5;
-          min-height: 350px;
+          // min-height: 350px;
 
           &-background {          
             background-image: url('./img/bitAnimals.JPEG');
             background-position: top;
+            background-size: cover
           }
         }
         

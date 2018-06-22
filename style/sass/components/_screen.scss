@@ -43,8 +43,9 @@
         white-space: nowrap; 
         // margin: 0 auto;
         letter-spacing: .1em; 
+        
         animation: 
-        typing 1s 1s backwards steps(15, end),
+        typing 1s 2s backwards steps(15, end),
         blink-caret .55s step-start 5 forwards;
 
     
@@ -62,9 +63,9 @@
             white-space: nowrap; 
             // margin: 0 auto;
             animation: 
-                typing 1s 1s backwards steps(15, end),
+                typing 1s backwards steps(15, end),
                 blink-caret .75s step-end infinite backwards;
-            animation-delay: 2.5s;
+            animation-delay: 3.5s;
 
             @include respond(phone-small){
                 margin-top: 2rem;
