@@ -1,38 +1,32 @@
-
-
 .footer {
-    grid-column: 1/ -1;
-    background-color: indianred;
-    height: 10rem;
-    background-color: rgb(153, 185, 133);
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
+  grid-column: 1/ -1;
+  background-color: indianred;
+  height: 10rem;
+  background-color: rgb(153, 185, 133);
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &__text {
+  &__text {
+    &--link {
+      text-decoration: none;
+      transition: all 0.2s;
+      color: #98e2ff;
+      font-weight: 600;
+      font-size: 3.2rem;
 
-        &--link {
-            text-decoration: none;
-            transition: all .2s;
-            color: #98e2ff;
-            font-weight: 600;
-            font-size: 3.2rem;
-            
-            &:hover {
-                color: #fff;;
-            }
-        }
-
-        
-        font-weight: 400;
-        margin: 0 auto;
-    }
-    &-link {
-        text-decoration: none;
+      &:hover {
+        color: #fff;
+      }
     }
 
+    font-weight: 400;
+    margin: 0 auto;
+  }
+  &-link {
+    text-decoration: none;
+  }
 }
-
