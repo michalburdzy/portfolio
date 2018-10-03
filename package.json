@@ -6,7 +6,7 @@
   "scripts": {
     "compile:sass": "node-sass style/sass/main.scss style.css -w",
     "live-server": "live-server",
-    "devserver": "npm-run-all -p compile:sass live-server"
+    "dev": "npm-run-all -p compile:sass live-server"
   },
   "repository": {
     "type": "git",
