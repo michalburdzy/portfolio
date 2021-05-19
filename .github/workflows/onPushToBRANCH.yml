@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - MASTER
+      - master
 
 env:
   NODE_VERSION: '12.x'
