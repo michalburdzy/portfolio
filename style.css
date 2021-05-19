@@ -23,7 +23,7 @@
       padding-bottom: 9rem; } }
   .bio__container {
     display: grid;
-    grid-template-areas: "header  header  header    header" "me-head me-head me-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2";
+    grid-template-areas: "header  header  header    header" "me-head me-head me-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2";
     grid-template-rows: repeat(3, max-content) 6rem 6rem;
     grid-template-columns: 1fr 1fr minmax(min-content, 0.6fr) 1fr;
     grid-gap: .4rem;
@@ -40,12 +40,12 @@
     @media only screen and (max-width: 75em) {
       .bio__container {
         margin: 0 10%;
-        grid-template-areas: "header  header  header              header" "me-head me-head tec-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2"; } }
+        grid-template-areas: "header  header  header              header" "me-head me-head tec-head             tec-head " "me      me      techno               techno" "me      me      biobutton-1         biobutton-1" "me      me      biobutton-2      biobutton-2"; } }
     @media only screen and (max-width: 38.75em) {
       .bio__container {
         margin: 0 5%;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "header         header      " "me-head        me-head     " "me             me          " "techno          techno      " "techno          techno     " "techno          techno     " "biobutton-2    biobutton-1 "; } }
+        grid-template-areas: "header         header      " "me-head        me-head     " "me             me          " "techno          techno      " "techno          techno     " "techno          techno     " "biobutton-2    biobutton-1 "; } }
   .bio--item {
     align-self: stretch;
     border-radius: 8px;
@@ -665,7 +665,7 @@
   background-color: #f8f8ff;
   border-radius: 8px;
   display: grid;
-  grid-template-areas: "text text" "name email" "submit submit";
+  grid-template-areas: "text text" "name email" "submit submit";
   transition: all .5s;
   animation: appear .5s backwards;
   animation-play-state: paused;
