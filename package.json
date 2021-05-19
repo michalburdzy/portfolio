@@ -4,6 +4,8 @@
   "description": "personal portfolio of michal burdzy",
   "main": "index.js",
   "scripts": {
+    "build": "yarn compile:sass && yarn copy:assets",
+    "copy:assets": "rm -rf build && mkdir build && cp index.html ./build && cp style.css ./build && cp -r js ./build",
     "compile:sass": "node-sass style/sass/main.scss style.css",
     "compile:sass:watch": "node-sass style/sass/main.scss style.css -w",
     "live-server": "live-server",

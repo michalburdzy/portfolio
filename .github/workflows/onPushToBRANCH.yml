@@ -20,6 +20,9 @@ jobs:
       - name: "Install dependencies"
         run: yarn install
 
+      - name: "Build assets"
+        run: yarn copy:assets
+
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -29,7 +32,7 @@ jobs:
  
       - name: "Deploy to S3"
         run: |
-          aws s3 sync s3://${{ secrets.DEV_AWS_S3_BUCKET }} --ac public-read --follow-symlinks --delete
+          aws s3 sync build/ s3://${{ secrets.DEV_AWS_S3_BUCKET }} --ac public-read --follow-symlinks --delete
  
       - name: "Invalidate CloudFront cache"
         run: |
