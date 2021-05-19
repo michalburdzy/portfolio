@@ -1,6 +1,4 @@
 window.onload = function() {
-  // console.log('window loaded!')
-
   var allProjects = document.querySelectorAll(".projects__gallery");
   var projectsSection = document.querySelector(".projects");
   var contactForm = document.querySelector(".form");
