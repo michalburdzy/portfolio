@@ -24,7 +24,7 @@
   "devDependencies": {
     "jquery": "^3.3.1",
     "live-server": "^1.2.0",
-    "node-sass": "^4.8.3",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.2"
   }
 }
